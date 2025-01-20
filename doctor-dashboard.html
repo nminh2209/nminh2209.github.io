@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PsychHealth</title>
+    <link href="/Client/css/dashboard-design.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/Client/script/auth.js"></script>
+</head>
+<body>
+    <section class="navigation-bar">
+        <nav class="navbar">
+            <div class="brand-div">
+                <p class="brand-name"><a href="index.html">PsychHealth</a></p>
+            </div>
+            <div class="nav-options">
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="test.html">Bài Kiểm Tra</a></li>
+                    <li><a href="FAQ.html">Câu Hỏi Thường Gặp</a></li>
+                    <li><button class="logout-btn" onclick="auth.logout()">Đăng Xuất</button></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <div class="dashboard-container">
+        <div class="user-info">
+            <h1>Welcome, <span id="userName"></span></h1>
+        </div>
+
+        <div class="test-history">
+            <h2>Lịch Sử Kiểm Tra</h2>
+            <div class="history-grid" id="historyGrid">
+                <!-- Test history cards will be inserted here -->
+            </div>
+        </div>
+
+        <div class="analytics">
+            <canvas id="progressChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Load user data
+            const userName = localStorage.getItem('userName') || 'User';
+            document.getElementById('userName').textContent = userName;
+
+            // Load test history
+            const history = await auth.getTestHistory();
+            displayTestHistory(history);
+            createProgressChart(history);
+        });
+
+        function displayTestHistory(history) {
+            const grid = document.getElementById('historyGrid');
+            history.forEach(test => {
+                const card = document.createElement('div');
+                card.className = 'test-card';
+                card.innerHTML = `
+                    <h3>${test.testType}</h3>
+                    <p>Score: ${test.score}</p>
+                    <p>Date: ${new Date(test.timestamp).toLocaleDateString()}</p>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function createProgressChart(history) {
+            const ctx = document.getElementById('progressChart').getContext('2d');
+            const dates = history.map(test => new Date(test.timestamp).toLocaleDateString());
+            const scores = history.map(test => test.score);
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Test Scores Over Time',
+                        data: scores,
+                        borderColor: '#0620a6',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

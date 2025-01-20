@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@100;200;400&family=Satisfy&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+.navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.navbar {
+    height: 50px;
+}
+
+.brand-name {
+    font-family: "Gotham Black", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 50px;
+}
+
+.brand-name a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 40px;
+    border-width: medium;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin-right: 50px;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0 25px;
+    vertical-align: center;
+    font-size: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    padding: 15px;
+    color: white;
+}
+
+.nav-links li a:hover {
+    border-radius: 9%;
+    background-color: #0a0a7e;
+    transition: background-color 0.5s;
+}
+
+.hero-container {
+    height: 20rem;
+    width: 100%;
+}
+
+.hero-banner {
+    background-image: url('res/mental_tests-pic/Schizophrenia.jpeg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 20rem;
+}
+
+.contents {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.contents-container {
+    display: flex;
+    width: 80%;
+
+}
+
+.title-schizophrenia {
+    font-size: 60px;
+    font-weight: bolder;
+    letter-spacing: 5px;
+}
+
+.text-description {
+    margin-top: 8px;
+}
+
+.symptoms-schizophrenia {
+    margin-top: 30px;
+}
+
+.text-description p {
+    font-size: 20px;
+}
+
+.types-schizophrenia {
+    margin-top: 30px;
+}
+
+.schizophrenia-symptoms-child {
+    margin-top: 60px;
+}
+
+.symptoms-schizophrenia p {
+    font-size: 20px;
+}
+
+.impact-schizophrenia {
+    font-size: 40px;
+    font-weight: bold
+}
+
+
+.symptoms-schizophrenia ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.symptoms-schizophrenia ul li {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.types-schizophrenia ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.types-schizophrenia ul span {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.symptoms-schizophrenia ul span {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.types-schizophrenia ul li {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.prevention-title-schizophrenia {
+    font-size: 40px;
+    font-weight: bold
+}
+
+.prevention-description-schizophrenia {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.prevention-schizophrenia ul {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.prevention-schizophrenia ul span {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.prevention-schizophrenia ul li {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.prevention-schizophrenia {
+    margin-top: 30px;
+}
+
+
+.footer-container {
+    padding: 15px;
+    background: #0620a6;
+    font-family: Poppins, serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}

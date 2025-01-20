@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@100;200;400&family=Satisfy&display=swap');
+
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.navbar {
+    height: 50px;
+}
+
+.brand-name {
+    font-family: "Gotham Black", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 50px;
+}
+
+.brand-name a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 40px;
+    border-width: medium;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin-right: 50px;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0 25px;
+    vertical-align: center;
+    font-size: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    padding: 15px;
+    color: white;
+}
+
+.nav-links li a:hover {
+    border-radius: 9%;
+    background-color: #0a0a7e;
+    transition: background-color 0.5s;
+}
+
+.flex-div {
+    padding: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 8px;
+    width: 45rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+.label-title {
+    font-size: 20px;
+}
+
+div.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    margin-left: 15px;
+}
+
+div.radio-group input {
+    display: none;
+}
+
+div.radio-group label {
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+div.radio-group input:checked + label {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+div.radio-group input:hover + label {
+    background-color: #ff0000;
+    opacity: 50%;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    width: 50%;
+    border-radius: 4px;
+    height: 5rem;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}

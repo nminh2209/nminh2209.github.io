@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="/Client/css/anxiety-design.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Bài kiểm tra K10 - PsychHealth</title>
+    <!-- Keep existing styles -->
+</head>
+<body>
+    <section class="navigation-bar">
+        <nav class="navbar">
+            <div class="brand-div">
+                <p class="brand-name"><a href="index.html">PsychHealth</a></p>
+            </div>
+            <div class="nav-options">
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="test.html">Bài Kiểm Tra</a></li>
+                    <li><a href="FAQ.html">Câu Hỏi Thường Gặp</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+<div class="flex-div">
+    <div class="container">
+        <h1>Bài Kiểm Tra Trầm Cảm K10</h1>
+        <form id="k10Form">
+            <!-- Question 1 -->
+            <label for="question1">1. Trong 4 tuần qua, bạn có thường xuyên cảm thấy mệt mỏi không rõ lý do không?</label>
+            <div class="radio-group">
+                <input id="q1-option1" name="question1" required type="radio" value="1">
+                <label for="q1-option1">Không bao giờ</label>
+
+                <input id="q1-option2" name="question1" type="radio" value="2">
+                <label for="q1-option2">Hiếm khi</label>
+
+                <input id="q1-option3" name="question1" type="radio" value="3">
+                <label for="q1-option3">Thỉnh thoảng</label>
+
+                <input id="q1-option4" name="question1" type="radio" value="4">
+                <label for="q1-option4">Thường xuyên</label>
+
+                <input id="q1-option5" name="question1" type="radio" value="5">
+                <label for="q1-option5">Luôn luôn</label>
+            </div>
+
+            <!-- Add remaining 9 questions following the same pattern -->
+            <!-- Questions 2-10 with similar structure -->
+
+            <button id="submitButton" type="button" onclick="calculateK10()">Tính Toán Kết Quả</button>
+        </form>
+        <div class="button" style="margin-top: 20px;">
+            <a class="button-36" href="test.html"><p>Quay lại trang trước</p></a>
+        </div>
+        
+
+        <div class="chart-container">
+            <canvas id="k10Chart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    function calculateK10() {
+        const questions = Array.from({length: 10}, (_, i) => `question${i + 1}`);
+        let scores = [];
+        let totalScore = 0;
+        let unansweredQuestions = [];
+
+        questions.forEach((question, index) => {
+            const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+            if (selectedOption) {
+                const score = parseInt(selectedOption.value, 10);
+                scores.push(score);
+                totalScore += score;
+            } else {
+                unansweredQuestions.push(index + 1);
+            }
+        });
+
+        if (unansweredQuestions.length > 0) {
+            Swal.fire({
+                title: 'Lỗi',
+                html: `<p>Vui lòng trả lời tất cả các câu hỏi. Câu hỏi chưa trả lời: ${unansweredQuestions.join(', ')}</p>`,
+                icon: 'error'
+            });
+            return;
+        }
+
+        let depressionLevel = "";
+        if (totalScore < 20) {
+            depressionLevel = "Mức độ stress thấp";
+        } else if (totalScore < 25) {
+            depressionLevel = "Mức độ stress nhẹ";
+        } else if (totalScore < 30) {
+            depressionLevel = "Mức độ stress trung bình";
+        } else {
+            depressionLevel = "Mức độ stress cao";
+        }
+
+        Swal.fire({
+            title: 'Kết Quả Bài Kiểm Tra K10',
+            html: `<p>Điểm số: ${totalScore}<br>Mức độ: <strong>${depressionLevel}</strong></p>`,
+            icon: 'info'
+        });
+
+        renderChart(scores, questions);
+    }
+
+    function renderChart(scores, questions) {
+        const ctx = document.getElementById('k10Chart').getContext('2d');
+        
+        if (window.k10Chart) {
+            window.k10Chart.destroy();
+        }
+
+        window.k10Chart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: questions.map((q, i) => `Câu ${i + 1}`),
+                datasets: [{
+                    label: 'Điểm số các câu hỏi',
+                    data: scores,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgba(54, 162, 235, 1)'
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 5,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

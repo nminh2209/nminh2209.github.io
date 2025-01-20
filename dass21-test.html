@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="/Client/css/depression-design.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Bài kiểm tra DASS-21 - PsychHealth</title>
+</head>
+<body>
+<section class="navigation-bar">
+    <nav class="navbar">
+        <div class="brand-div">
+            <p class="brand-name"><a href="index.html">PsychHealth</a></p>
+        </div>
+        <div class="nav-options">
+            <ul class="nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="about.html">Giới Thiệu</a></li>
+                <li><a href="test.html">Bài Kiểm Tra</a></li>
+                <li><a href="FAQ.html">Câu Hỏi Thường Gặp</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<div class="flex-div">
+    <div class="container">
+        <h1>Bài Kiểm Tra DASS-21</h1>
+        <p>Hãy đánh giá mức độ phù hợp của các câu dưới đây với bạn trong tuần vừa qua</p>
+        
+        <form id="dassForm">
+            <label for="q1">1. Tôi thấy khó thư giãn</label>
+            <div class="radio-group">
+                <input type="radio" id="q1-0" name="q1" value="0" required>
+                <label for="q1-0">Không hề</label>
+                <input type="radio" id="q1-1" name="q1" value="1">
+                <label for="q1-1">Đôi khi</label>
+                <input type="radio" id="q1-2" name="q1" value="2">
+                <label for="q1-2">Thường xuyên</label>
+                <input type="radio" id="q1-3" name="q1" value="3">
+                <label for="q1-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q2">2. Tôi thấy miệng khô</label>
+            <div class="radio-group">
+                <input type="radio" id="q2-0" name="q2" value="0" required>
+                <label for="q2-0">Không hề</label>
+                <input type="radio" id="q2-1" name="q2" value="1">
+                <label for="q2-1">Đôi khi</label>
+                <input type="radio" id="q2-2" name="q2" value="2">
+                <label for="q2-2">Thường xuyên</label>
+                <input type="radio" id="q2-3" name="q2" value="3">
+                <label for="q2-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q3">3. Tôi không thể trải nghiệm cảm giác tích cực</label>
+            <div class="radio-group">
+                <input type="radio" id="q3-0" name="q3" value="0" required>
+                <label for="q3-0">Không hề</label>
+                <input type="radio" id="q3-1" name="q3" value="1">
+                <label for="q3-1">Đôi khi</label>
+                <input type="radio" id="q3-2" name="q3" value="2">
+                <label for="q3-2">Thường xuyên</label>
+                <input type="radio" id="q3-3" name="q3" value="3">
+                <label for="q3-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q4">4. Tôi khó thở (ví dụ, thở gấp mà không vận động)</label>
+            <div class="radio-group">
+                <input type="radio" id="q4-0" name="q4" value="0" required>
+                <label for="q4-0">Không hề</label>
+                <input type="radio" id="q4-1" name="q4" value="1">
+                <label for="q4-1">Đôi khi</label>
+                <input type="radio" id="q4-2" name="q4" value="2">
+                <label for="q4-2">Thường xuyên</label>
+                <input type="radio" id="q4-3" name="q4" value="3">
+                <label for="q4-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q5">5. Tôi khó có thể có động lực làm bất cứ điều gì</label>
+            <div class="radio-group">
+                <input type="radio" id="q5-0" name="q5" value="0" required>
+                <label for="q5-0">Không hề</label>
+                <input type="radio" id="q5-1" name="q5" value="1">
+                <label for="q5-1">Đôi khi</label>
+                <input type="radio" id="q5-2" name="q5" value="2">
+                <label for="q5-2">Thường xuyên</label>
+                <input type="radio" id="q5-3" name="q5" value="3">
+                <label for="q5-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q6">6. Tôi có xu hướng phản ứng thái quá với các tình huống</label>
+            <div class="radio-group">
+                <input type="radio" id="q6-0" name="q6" value="0" required>
+                <label for="q6-0">Không hề</label>
+                <input type="radio" id="q6-1" name="q6" value="1">
+                <label for="q6-1">Đôi khi</label>
+                <input type="radio" id="q6-2" name="q6" value="2">
+                <label for="q6-2">Thường xuyên</label>
+                <input type="radio" id="q6-3" name="q6" value="3">
+                <label for="q6-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q7">7. Tôi cảm thấy run hoặc run rẩy</label>
+            <div class="radio-group">
+                <input type="radio" id="q7-0" name="q7" value="0" required>
+                <label for="q7-0">Không hề</label>
+                <input type="radio" id="q7-1" name="q7" value="1">
+                <label for="q7-1">Đôi khi</label>
+                <input type="radio" id="q7-2" name="q7" value="2">
+                <label for="q7-2">Thường xuyên</label>
+                <input type="radio" id="q7-3" name="q7" value="3">
+                <label for="q7-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q8">8. Tôi cảm thấy lo lắng mà không có lý do rõ ràng</label>
+            <div class="radio-group">
+                <input type="radio" id="q8-0" name="q8" value="0" required>
+                <label for="q8-0">Không hề</label>
+                <input type="radio" id="q8-1" name="q8" value="1">
+                <label for="q8-1">Đôi khi</label>
+                <input type="radio" id="q8-2" name="q8" value="2">
+                <label for="q8-2">Thường xuyên</label>
+                <input type="radio" id="q8-3" name="q8" value="3">
+                <label for="q8-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q9">9. Tôi thấy dễ bị kích động</label>
+            <div class="radio-group">
+                <input type="radio" id="q9-0" name="q9" value="0" required>
+                <label for="q9-0">Không hề</label>
+                <input type="radio" id="q9-1" name="q9" value="1">
+                <label for="q9-1">Đôi khi</label>
+                <input type="radio" id="q9-2" name="q9" value="2">
+                <label for="q9-2">Thường xuyên</label>
+                <input type="radio" id="q9-3" name="q9" value="3">
+                <label for="q9-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q10">10. Tôi thấy khó chịu vì những chuyện nhỏ nhặt</label>
+            <div class="radio-group">
+                <input type="radio" id="q10-0" name="q10" value="0" required>
+                <label for="q10-0">Không hề</label>
+                <input type="radio" id="q10-1" name="q10" value="1">
+                <label for="q10-1">Đôi khi</label>
+                <input type="radio" id="q10-2" name="q10" value="2">
+                <label for="q10-2">Thường xuyên</label>
+                <input type="radio" id="q10-3" name="q10" value="3">
+                <label for="q10-3">Rất thường xuyên</label>
+            </div>
+            <label for="q11">11. Tôi cảm thấy khó giữ bình tĩnh</label>
+            <div class="radio-group">
+                <input type="radio" id="q11-0" name="q11" value="0" required>
+                <label for="q11-0">Không hề</label>
+                <input type="radio" id="q11-1" name="q11" value="1">
+                <label for="q11-1">Đôi khi</label>
+                <input type="radio" id="q11-2" name="q11" value="2">
+                <label for="q11-2">Thường xuyên</label>
+                <input type="radio" id="q11-3" name="q11" value="3">
+                <label for="q11-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q12">12. Tôi cảm thấy lo lắng khi cảm thấy sắp hoảng sợ</label>
+            <div class="radio-group">
+                <input type="radio" id="q12-0" name="q12" value="0" required>
+                <label for="q12-0">Không hề</label>
+                <input type="radio" id="q12-1" name="q12" value="1">
+                <label for="q12-1">Đôi khi</label>
+                <input type="radio" id="q12-2" name="q12" value="2">
+                <label for="q12-2">Thường xuyên</label>
+                <input type="radio" id="q12-3" name="q12" value="3">
+                <label for="q12-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q13">13. Tôi cảm thấy không có gì để mong đợi</label>
+            <div class="radio-group">
+                <input type="radio" id="q13-0" name="q13" value="0" required>
+                <label for="q13-0">Không hề</label>
+                <input type="radio" id="q13-1" name="q13" value="1">
+                <label for="q13-1">Đôi khi</label>
+                <input type="radio" id="q13-2" name="q13" value="2">
+                <label for="q13-2">Thường xuyên</label>
+                <input type="radio" id="q13-3" name="q13" value="3">
+                <label for="q13-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q14">14. Tôi cảm thấy dễ cáu kỉnh</label>
+            <div class="radio-group">
+                <input type="radio" id="q14-0" name="q14" value="0" required>
+                <label for="q14-0">Không hề</label>
+                <input type="radio" id="q14-1" name="q14" value="1">
+                <label for="q14-1">Đôi khi</label>
+                <input type="radio" id="q14-2" name="q14" value="2">
+                <label for="q14-2">Thường xuyên</label>
+                <input type="radio" id="q14-3" name="q14" value="3">
+                <label for="q14-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q15">15. Tôi cảm thấy các triệu chứng sinh lý như đổ mồ hôi mà không có lý do</label>
+            <div class="radio-group">
+                <input type="radio" id="q15-0" name="q15" value="0" required>
+                <label for="q15-0">Không hề</label>
+                <input type="radio" id="q15-1" name="q15" value="1">
+                <label for="q15-1">Đôi khi</label>
+                <input type="radio" id="q15-2" name="q15" value="2">
+                <label for="q15-2">Thường xuyên</label>
+                <input type="radio" id="q15-3" name="q15" value="3">
+                <label for="q15-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q16">16. Tôi cảm thấy sợ hãi mà không có lý do rõ ràng</label>
+            <div class="radio-group">
+                <input type="radio" id="q16-0" name="q16" value="0" required>
+                <label for="q16-0">Không hề</label>
+                <input type="radio" id="q16-1" name="q16" value="1">
+                <label for="q16-1">Đôi khi</label>
+                <input type="radio" id="q16-2" name="q16" value="2">
+                <label for="q16-2">Thường xuyên</label>
+                <input type="radio" id="q16-3" name="q16" value="3">
+                <label for="q16-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q17">17. Tôi cảm thấy cuộc sống không có ý nghĩa</label>
+            <div class="radio-group">
+                <input type="radio" id="q17-0" name="q17" value="0" required>
+                <label for="q17-0">Không hề</label>
+                <input type="radio" id="q17-1" name="q17" value="1">
+                <label for="q17-1">Đôi khi</label>
+                <input type="radio" id="q17-2" name="q17" value="2">
+                <label for="q17-2">Thường xuyên</label>
+                <input type="radio" id="q17-3" name="q17" value="3">
+                <label for="q17-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q18">18. Tôi thấy mình khó tập trung</label>
+            <div class="radio-group">
+                <input type="radio" id="q18-0" name="q18" value="0" required>
+                <label for="q18-0">Không hề</label>
+                <input type="radio" id="q18-1" name="q18" value="1">
+                <label for="q18-1">Đôi khi</label>
+                <input type="radio" id="q18-2" name="q18" value="2">
+                <label for="q18-2">Thường xuyên</label>
+                <input type="radio" id="q18-3" name="q18" value="3">
+                <label for="q18-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q19">19. Tôi cảm thấy mình không có giá trị</label>
+            <div class="radio-group">
+                <input type="radio" id="q19-0" name="q19" value="0" required>
+                <label for="q19-0">Không hề</label>
+                <input type="radio" id="q19-1" name="q19" value="1">
+                <label for="q19-1">Đôi khi</label>
+                <input type="radio" id="q19-2" name="q19" value="2">
+                <label for="q19-2">Thường xuyên</label>
+                <input type="radio" id="q19-3" name="q19" value="3">
+                <label for="q19-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q20">20. Tôi cảm thấy mình thiếu tự tin</label>
+            <div class="radio-group">
+                <input type="radio" id="q20-0" name="q20" value="0" required>
+                <label for="q20-0">Không hề</label>
+                <input type="radio" id="q20-1" name="q20" value="1">
+                <label for="q20-1">Đôi khi</label>
+                <input type="radio" id="q20-2" name="q20" value="2">
+                <label for="q20-2">Thường xuyên</label>
+                <input type="radio" id="q20-3" name="q20" value="3">
+                <label for="q20-3">Rất thường xuyên</label>
+            </div>
+        
+            <label for="q21">21. Tôi cảm thấy mình không kiểm soát được những điều quan trọng trong cuộc sống</label>
+            <div class="radio-group">
+                <input type="radio" id="q21-0" name="q21" value="0" required>
+                <label for="q21-0">Không hề</label>
+                <input type="radio" id="q21-1" name="q21" value="1">
+                <label for="q21-1">Đôi khi</label>
+                <input type="radio" id="q21-2" name="q21" value="2">
+                <label for="q21-2">Thường xuyên</label>
+                <input type="radio" id="q21-3" name="q21" value="3">
+                <label for="q21-3">Rất thường xuyên</label>
+            </div>
+        
+            
+        
+        <button onclick="calculateDASS()" type="button">Nộp Bài</button>
+        </form>
+        <div class="button" style="margin-top: 20px;">
+            <a class="button-36" href="test.html"><p>Quay lại trang trước</p></a>
+        </div>
+    </div>
+</div>
+
+<script>
+function calculateDASS() {
+    const questions = {
+        depression: [3, 5, 10, 13, 16, 17, 21],
+        anxiety: [2, 4, 7, 9, 15, 19, 20],
+        stress: [1, 6, 8, 11, 12, 14, 18]
+    };
+
+    let scores = {
+        depression: 0,
+        anxiety: 0,
+        stress: 0
+    };
+
+    // Calculate scores for each category
+    for (let category in questions) {
+        questions[category].forEach(qNum => {
+            const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+            if (selected) {
+                scores[category] += parseInt(selected.value);
+            }
+        });
+        // Multiply by 2 as per DASS-21 scoring
+        scores[category] *= 2;
+    }
+
+    // Create chart data
+    const chartData = {
+        labels: ['Trầm cảm', 'Lo âu', 'Stress'],
+        datasets: [{
+            label: 'Điểm số',
+            data: [scores.depression, scores.anxiety, scores.stress],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(54, 162, 235, 0.5)',
+                'rgba(255, 206, 86, 0.5)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    // Get severity levels
+    const severityLevels = {
+        depression: getSeverityLevel('depression', scores.depression),
+        anxiety: getSeverityLevel('anxiety', scores.anxiety),
+        stress: getSeverityLevel('stress', scores.stress)
+    };
+
+    // Display results with chart
+    Swal.fire({
+        title: 'Kết Quả DASS-21',
+        html: `
+            <div style="margin-bottom: 20px;">
+                <h3>Trầm cảm: ${scores.depression} (${severityLevels.depression})</h3>
+                <h3>Lo âu: ${scores.anxiety} (${severityLevels.anxiety})</h3>
+                <h3>Stress: ${scores.stress} (${severityLevels.stress})</h3>
+            </div>
+            <canvas id="dassChart" width="400" height="300"></canvas>
+        `,
+        width: 800,
+        didRender: () => {
+            const ctx = document.getElementById('dassChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    });
+}
+
+function getSeverityLevel(category, score) {
+    const levels = {
+        depression: [
+            [0, 9, "Bình thường"],
+            [10, 13, "Nhẹ"],
+            [14, 20, "Trung bình"],
+            [21, 27, "Nặng"],
+            [28, Infinity, "Rất nặng"]
+        ],
+        anxiety: [
+            [0, 7, "Bình thường"],
+            [8, 9, "Nhẹ"],
+            [10, 14, "Trung bình"],
+            [15, 19, "Nặng"],
+            [20, Infinity, "Rất nặng"]
+        ],
+        stress: [
+            [0, 14, "Bình thường"],
+            [15, 18, "Nhẹ"],
+            [19, 25, "Trung bình"],
+            [26, 33, "Nặng"],
+            [34, Infinity, "Rất nặng"]
+        ]
+    };
+
+    for (let [min, max, label] of levels[category]) {
+        if (score >= min && score <= max) return label;
+    }
+}
+</script>
+</body>
+</html>
