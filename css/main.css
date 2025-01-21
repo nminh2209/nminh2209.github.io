@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@100;200;400&family=Satisfy&display=swap');
 
 * {
+    font-family: Poppins, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -242,7 +242,7 @@ body {
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     height: 25rem;
     width: 30rem;
-    background-image: url('res/hero-pics/hero-image.jpg');
+    background-image: url('/Client/res/hero-pics/gallery8.jpg');
     background-size: cover;
     background-position: 50% 50%;
 }
@@ -411,7 +411,7 @@ body {
 .thirdBar {
     position: relative;
     height: 20rem;
-    background-image: url(''); /* Replace with your background image */
+    background-image: url('/Client/res/thirdBar-pics/thirdbar.jpg'); /* Replace with your background image */
     background-size: cover;
     background-position: 50% 30%;
     color: #fff;
@@ -463,7 +463,7 @@ body {
 }
 
 .anxietyTestContainer {
-    background-image: url('res/mental_tests-pic/anxiety.jpeg');
+    background-image: url('/Client/res/mental_tests-pic/anxiety.jpeg');
     background-position: top;
 }
 
@@ -485,7 +485,7 @@ body {
 }
 
 .depressionTestContainer {
-    background-image: url('res/mental_tests-pic/depression.jpeg');
+    background-image: url('/Client/res/mental_tests-pic/depression.jpeg');
     background-position: top;
 }
 
@@ -698,12 +698,125 @@ body {
     color: white;
 }
 
+/* FAQ Section */
+.FAQ {
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+
+.FAQ-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.FAQ-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.FAQ-item {
+    background: white;
+    border-radius: 8px;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.FAQ-item:hover {
+    transform: translateY(-2px);
+}
+
+.FAQ-item h3 {
+    color: #2179fd;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.FAQ-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer Styles */
 .footer-container {
-    padding: 15px;
-    background: #0620a6;
-    font-family: Poppins, serif;
-    font-size: 14px;
-    font-weight: bold;
+    background: linear-gradient(135deg, #21D4FD 0%, #B721FF 100%);
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
     color: white;
     text-align: center;
 }
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    margin: 8px 0;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    margin: 10px 0;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+.footer-container {
+    background: linear-gradient(135deg, #21D4FD 0%, #B721FF 100%);
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    width: 100%;
+    background: linear-gradient(135deg, #21D4FD 0%, #B721FF 100%);
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.footer-bottom {
+    background: linear-gradient(135deg, #21D4FD 0%, #B721FF 100%);
+    padding: 3px 0;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+    
+.footer-bottom p {
+    margin: 0;
+}
+
+

@@ -1,3 +1,9 @@
+* {
+    font-family: Poppins, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Poppins, sans-serif;
     padding: 0;
@@ -19,7 +25,6 @@ body {
 .brand-name {
     font-family: "Gotham Black", sans-serif;
     font-size: 30px;
-    font-weight: bold;
     padding: 0;
     margin-top: 0;
     margin-bottom: 0;
@@ -63,6 +68,7 @@ body {
     background-color: #0a0a7e;
     transition: background-color 0.5s;
 }
+
 
 .title-wrapper .title-text {
     text-align: center;
