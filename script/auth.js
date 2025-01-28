@@ -1,6 +1,7 @@
 class AuthService {
     constructor() {
-        this.API_URL = 'your-backend-api-url';
+        this.API_URL = 'http://localhost:3000/api'; // Or your actual backend URL
+
         this.token = localStorage.getItem('token');
     }
 

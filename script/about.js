@@ -1,4 +1,5 @@
-// about.js
+
+console.log("Script loaded!");
 
 function openModal(name, description, picture) {
     var modal = document.getElementById('myModal');

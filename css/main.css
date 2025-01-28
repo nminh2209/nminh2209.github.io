@@ -242,7 +242,7 @@ body {
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     height: 25rem;
     width: 30rem;
-    background-image: url('/Client/res/hero-pics/gallery8.jpg');
+    background-image: url('/res/hero-pics/gallery8.jpg');
     background-size: cover;
     background-position: 50% 50%;
 }
@@ -411,7 +411,7 @@ body {
 .thirdBar {
     position: relative;
     height: 20rem;
-    background-image: url('/Client/res/thirdBar-pics/thirdbar.jpg'); /* Replace with your background image */
+    background-image: url('/res/thirdBar-pics/thirdbar.jpg'); /* Replace with your background image */
     background-size: cover;
     background-position: 50% 30%;
     color: #fff;
@@ -463,7 +463,7 @@ body {
 }
 
 .anxietyTestContainer {
-    background-image: url('/Client/res/mental_tests-pic/anxiety.jpeg');
+    background-image: url('/res/mental_tests-pic/anxiety.jpeg');
     background-position: top;
 }
 
@@ -485,7 +485,7 @@ body {
 }
 
 .depressionTestContainer {
-    background-image: url('/Client/res/mental_tests-pic/depression.jpeg');
+    background-image: url('/res/mental_tests-pic/depression.jpeg');
     background-position: top;
 }
 
@@ -508,7 +508,7 @@ body {
 }
 
 .addictionTestContainer {
-    background-image: url('res/mental_tests-pic/addiction.jpg');
+    background-image: url('/res/mental_tests-pic/addiction.jpg');
     background-position: top;
 }
 
@@ -662,7 +662,7 @@ body {
 .blob {
     background-position: 50% 50%;
     background-size: cover;
-    background-image: url('res/blob/happy-people.jpg');
+    background-image: url('/res/blob/happy-people.jpg');
     z-index: -1;
     height: 35rem;
     width: 100%;
@@ -681,7 +681,7 @@ body {
     align-items: center;
     background-position: 50% 50%;
     background-size: cover;
-    background-image: url('res/blob/blob-haikei.png');
+    background-image: url('/res/blob/blob-haikei.png');
     justify-content: center;
     opacity: 50%;
     height: 30rem;
