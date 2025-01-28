@@ -85,17 +85,16 @@ body {
     font-size: 30px;
 }
 
-.input-group {
-    margin-bottom: 20px;
-}
+
 
 .input-group input {
-    width: 100%;
+    width: 93%;
     padding: 12px;
     border: 1px solid #4964ee;
     border-radius: 4px;
     font-size: 16px;
     transition: all 0.3s ease;
+    margin-bottom: 20px;
 }
 
 .input-group input:focus {

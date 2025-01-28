@@ -161,97 +161,91 @@
 </div>
 
 <script>
-    function calculateAnxiety() {
-        const questions = ["question1", "question2", "question3", "question4", "question5", "question6", "question7"];
+   function calculateAnxiety() {
+    const questions = ["question1", "question2", "question3", "question4", "question5", "question6", "question7"];
+    let scores = [];
+    let totalScore = 0;
+    let unansweredQuestions = [];
 
-        let scores = [];
-        let totalScore = 0;
-        let unansweredQuestions = [];
-
-        questions.forEach((question, index) => {
-            const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
-            if (selectedOption) {
-                const score = parseInt(selectedOption.value, 10);
-                scores.push(score);
-                totalScore += score;
-            } else {
-                unansweredQuestions.push(index + 1);
-            }
-        });
-
-        if (unansweredQuestions.length > 0) {
-            Swal.fire({
-                title: 'Lỗi',
-                html: `<p>Vui lòng trả lời tất cả các câu hỏi. Câu hỏi chưa trả lời: ${unansweredQuestions.join(', ')}</p>`,
-                icon: 'error'
-            });
-            return;
-        }
-
-        let anxietyLevel = "";
-
-        if (totalScore >= 0 && totalScore <= 4) {
-            anxietyLevel = "Không có triệu chứng lo âu";
-        } else if (totalScore >= 5 && totalScore <= 9) {
-            anxietyLevel = "Lo âu nhẹ";
-        } else if (totalScore >= 10 && totalScore <= 14) {
-            anxietyLevel = "Lo âu trung bình";
+    // Get scores and validate
+    questions.forEach((question, index) => {
+        const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+        if (selectedOption) {
+            const score = parseInt(selectedOption.value, 10);
+            scores.push(score);
+            totalScore += score;
         } else {
-            anxietyLevel = "Lo âu nghiêm trọng";
+            unansweredQuestions.push(index + 1);
         }
+    });
 
+    // Show results and chart
+    if (unansweredQuestions.length === 0) {
+        let anxietyLevel = getAnxietyLevel(totalScore);
+        
+        // First show the results
         Swal.fire({
             title: 'Kết Quả Bài Kiểm Tra Lo Âu',
-            html: `<p>Mức độ lo âu: <strong>${anxietyLevel}</strong></p>`,
+            html: `
+                <p>Mức độ lo âu: <strong>${anxietyLevel}</strong></p>
+                <p>Tổng điểm: ${totalScore}</p>
+            `,
             icon: 'info'
+        }).then(() => {
+            // Then render the chart
+            const chartContainer = document.querySelector('.chart-container');
+            chartContainer.style.display = 'block';
+            chartContainer.style.height = '400px';
+            renderChart(scores, questions);
         });
-
-        renderChart(scores, questions);
     }
+}
 
-    function renderChart(scores, questions) {
-        const ctx = document.getElementById('anxietyChart').getContext('2d');
-
-        if (window.anxietyChart) {
-            window.anxietyChart.destroy();
-        }
-
-        window.anxietyChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: questions.map((q, i) => `Câu ${i + 1}`),
-                datasets: [{
-                    label: 'Điểm số mỗi câu hỏi',
-                    data: scores,
-                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Điểm số'
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Câu hỏi'
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
+function renderChart(scores, questions) {
+    const ctx = document.getElementById('anxietyChart').getContext('2d');
+    
+    // Destroy existing chart if it exists
+    if (window.myChart) {
+        window.myChart.destroy();
+    }
+    
+    // Create new chart and store reference
+    window.myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7'],
+            datasets: [{
+                label: 'Điểm số câu hỏi',
+                data: scores,
+                backgroundColor: Array(7).fill('#4CAF50'),
+                borderColor: Array(7).fill('#45a049'),
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 3,
+                    ticks: {
+                        stepSize: 1
                     }
                 }
             }
-        });
-    }
+        }
+    });
+}
+
+
+function getAnxietyLevel(score) {
+    if (score <= 4) return "Không có triệu chứng lo âu";
+    if (score <= 9) return "Lo âu nhẹ";
+    if (score <= 14) return "Lo âu trung bình";
+    return "Lo âu nghiêm trọng";
+}
+
+
 </script>
 </body>
 </html>

@@ -164,3 +164,11 @@ button {
 .submit-button:hover {
     background-color: #45a049;
 }
+
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 20px auto;
+    position: relative;
+}
