@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="vi">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta charset="UTF-8">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
@@ -13,10 +15,12 @@
 <section class="navigation-bar">
     <nav class="navbar">
         <div class="brand-div">
+            <div class="menu-toggle">☰</div>
             <p class="brand-name"><a href="index.html">PsychHealth</a></p>
         </div>
         <div class="nav-options">
             <ul class="nav-links">
+                
                 <li><a href="index.html">Trang Chủ</a></li>
                 <li><a href="about.html">Giới Thiệu</a></li>
                 <li><a href="test.html">Kiểm Tra</a></li>
@@ -180,5 +184,16 @@
         <p>© 2025 PsychHealth. Mọi quyền được bảo lưu.</p>
     </div>
 </footer>
+
+<script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('.nav-options').classList.toggle('active');
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+
+
+</script>
+</body>
+
 </body>
 </html>

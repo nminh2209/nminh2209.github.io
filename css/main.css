@@ -820,3 +820,131 @@ footer {
 }
 
 
+@media screen and (max-width: 768px) {
+    .navigation-bar {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .nav-links {
+      margin: 10px 0;
+    }
+  
+    .nav-links li {
+      display: block;
+      margin: 10px 0;
+      text-align: center;
+    }
+  
+    .hero-contents {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .hero-image {
+      width: 100%;
+      max-width: 300px;
+      height: 200px;
+    }
+  
+    .hero-textContent {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .testsContainer {
+      flex-direction: column;
+      height: auto;
+      align-items: center;
+    }
+  
+    .testimonial-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .first-testimonial,
+    .second-testimonial,
+    .third-testimonial {
+      width: 90%;
+      margin: 10px auto;
+    }
+  
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  
+  /* Add a hamburger menu button */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .navigation-bar {
+        position: relative;
+        padding: 10px 0;
+    }
+
+    .brand-name {
+        margin-left: 20px;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 60px;
+        background: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    .nav-links li {
+        display: block;
+        text-align: center;
+        padding: 15px 0;
+        margin: 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 10px;
+    }
+    @media screen and (max-width: 768px) {
+        .nav-options {
+            display: none;
+            width: 100%;
+        }
+    
+        .nav-options.active {
+            display: block;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            background: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            width: 100%;
+            z-index: 1000;
+        }
+    }
+    
+}
