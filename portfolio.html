@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Nguyen Hoang Minh — Software Engineer</title>
+    <meta name="description" content="Software projects by Nguyen Hoang Minh — full-stack web apps, production CRM systems, and real-world engineering.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body class="dark-theme">
+
+    <!-- Star canvas background -->
+    <canvas id="stars-canvas" aria-hidden="true"></canvas>
+
+    <!-- Nebula washes -->
+    <div class="bg-washes" aria-hidden="true">
+        <div class="wash wash-nebula-pink"></div>
+        <div class="wash wash-nebula-blue"></div>
+        <div class="wash wash-nebula-purple"></div>
+    </div>
+
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <nav class="site-nav">
+        <div class="nav-brand"><span class="nav-brand-m">M</span><span class="nav-brand-dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="piano.html">Piano</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="https://www.linkedin.com/in/nguyen-minh-759149223/" target="_blank" rel="noopener" class="nav-linkedin" aria-label="LinkedIn Profile">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+        </a>
+        <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.site-nav').classList.toggle('nav-open')">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <main>
+
+        <!-- Page hero -->
+        <section class="page-hero">
+            <p class="page-eyebrow">Work & Projects</p>
+            <h1 class="page-title">The Score<br><em>Portfolio</em></h1>
+            <p class="page-subtitle">Software Engineer &nbsp;&middot;&nbsp; Full-Stack Developer &nbsp;&middot;&nbsp; Production-Ready</p>
+        </section>
+
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+            </svg>
+        </div>
+
+        <!-- Memory Crystals — Three project showcases -->
+        <section class="crystals-section">
+
+            <!-- Crystal 1: Bakery ERP -->
+            <div class="memory-crystal crystal-1" data-index="0">
+                <div class="crystal-glow-ring" aria-hidden="true"></div>
+                <div class="crystal-frame">
+                    <div class="crystal-inner">
+                        <div class="crystal-image-area">
+                            <img src="images/ac1.jpg" alt="Bakery ERP" class="crystal-portrait" onerror="this.style.display='none'">
+                            <div class="crystal-prism" aria-hidden="true">
+                                <div class="prism-beam beam-1"></div>
+                                <div class="prism-beam beam-2"></div>
+                                <div class="prism-beam beam-3"></div>
+                            </div>
+                        </div>
+                        <div class="crystal-corner tl"></div>
+                        <div class="crystal-corner tr"></div>
+                        <div class="crystal-corner bl"></div>
+                        <div class="crystal-corner br"></div>
+                    </div>
+                </div>
+                <div class="crystal-content">
+                    <div class="parchment-scroll">
+                        <p class="scroll-category">FULL-STACK &middot; LIVE PRODUCTION</p>
+                        <h2 class="scroll-title">Bakery Management ERP</h2>
+                        <div class="scroll-divider"></div>
+                        <p class="scroll-theme">Built for Scale &amp; Impact</p>
+                        <p class="scroll-details">
+                            <strong>Stack:</strong> React 19 &middot; TypeScript &middot; Firebase &middot; Ant Design<br>
+                            <strong>Scope:</strong> 12+ modules &middot; 3 stores &middot; Real-time inventory
+                        </p>
+                        <p class="scroll-desc">A production bakery ERP serving 3 physical stores. Automated product code generation, multi-ingredient purchase orders with pricing analytics, real-time inventory tracking, and a fully localized responsive UI.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crystal 2: MindX CRM -->
+            <div class="memory-crystal crystal-2" data-index="1">
+                <div class="crystal-glow-ring" aria-hidden="true"></div>
+                <div class="crystal-frame">
+                    <div class="crystal-inner">
+                        <div class="crystal-image-area">
+                            <img src="images/ac2.jpg" alt="MindX CRM" class="crystal-portrait" onerror="this.style.display='none'">
+                            <div class="crystal-prism" aria-hidden="true">
+                                <div class="prism-beam beam-1"></div>
+                                <div class="prism-beam beam-2"></div>
+                                <div class="prism-beam beam-3"></div>
+                            </div>
+                        </div>
+                        <div class="crystal-corner tl"></div>
+                        <div class="crystal-corner tr"></div>
+                        <div class="crystal-corner bl"></div>
+                        <div class="crystal-corner br"></div>
+                    </div>
+                </div>
+                <div class="crystal-content">
+                    <div class="parchment-scroll">
+                        <p class="scroll-category">PRODUCTION &middot; CRM</p>
+                        <h2 class="scroll-title">MindX CRM Platform</h2>
+                        <div class="scroll-divider"></div>
+                        <p class="scroll-theme">10K+ Events Daily &middot; 99.9% Uptime</p>
+                        <p class="scroll-details">
+                            <strong>Stack:</strong> Python &middot; Azure &middot; Application Insights &middot; Stringee API<br>
+                            <strong>Scope:</strong> VoIP integration &middot; Vendor management &middot; Async patterns
+                        </p>
+                        <p class="scroll-desc">Maintained a live production CRM with real-time call integration via Stringee VoIP. Instrumented Azure Application Insights across 3 vendors, reducing debugging time by 60%. Fixed async lead sync with exponential backoff — 99.9% success rate.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crystal 3: HMU Medical -->
+            <div class="memory-crystal crystal-3" data-index="2">
+                <div class="crystal-glow-ring" aria-hidden="true"></div>
+                <div class="crystal-frame">
+                    <div class="crystal-inner">
+                        <div class="crystal-image-area">
+                            <img src="images/ac3.jpg" alt="HMU Medical" class="crystal-portrait" onerror="this.style.display='none'">
+                            <div class="crystal-prism" aria-hidden="true">
+                                <div class="prism-beam beam-1"></div>
+                                <div class="prism-beam beam-2"></div>
+                                <div class="prism-beam beam-3"></div>
+                            </div>
+                        </div>
+                        <div class="crystal-corner tl"></div>
+                        <div class="crystal-corner tr"></div>
+                        <div class="crystal-corner bl"></div>
+                        <div class="crystal-corner br"></div>
+                    </div>
+                </div>
+                <div class="crystal-content">
+                    <div class="parchment-scroll">
+                        <p class="scroll-category">BACKEND LEAD &middot; CAPSTONE</p>
+                        <h2 class="scroll-title">HMU Medical Documentation</h2>
+                        <div class="scroll-divider"></div>
+                        <p class="scroll-theme">Backend Architecture &amp; API Design</p>
+                        <p class="scroll-details">
+                            <strong>Stack:</strong> Django &middot; PostgreSQL &middot; Vue3 &middot; REST API<br>
+                            <strong>Scope:</strong> Clinical case system &middot; Medical models &middot; CORS
+                        </p>
+                        <p class="scroll-desc">Designed and built detailed medical models for a clinical-case documentation platform. Fixed complex CORS and serializer issues. Integrated Vue3 frontend for full case display and management.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+            </svg>
+        </div>
+
+        <!-- Skills as Constellations -->
+        <section class="constellations-section">
+            <p class="constellations-eyebrow">Craft</p>
+            <h2 class="constellations-heading">Skills &amp; Stack</h2>
+            <div class="constellations-grid">
+
+                <div class="constellation" data-skill="90" data-name="Frontend">
+                    <div class="constellation-stars">
+                        <span class="star" style="top:20%;left:15%"></span>
+                        <span class="star" style="top:35%;left:40%"></span>
+                        <span class="star" style="top:15%;left:65%"></span>
+                        <span class="star" style="top:55%;left:80%"></span>
+                        <span class="star" style="top:75%;left:55%"></span>
+                        <span class="star" style="top:45%;left:25%"></span>
+                        <span class="star" style="top:85%;left:35%"></span>
+                    </div>
+                    <div class="constellation-lines" aria-hidden="true">
+                        <svg viewBox="0 0 200 200" preserveAspectRatio="none">
+                            <line x1="30" y1="40" x2="80" y2="70" opacity="0.3"/>
+                            <line x1="80" y1="70" x2="130" y2="30" opacity="0.3"/>
+                            <line x1="130" y1="30" x2="160" y2="110" opacity="0.3"/>
+                            <line x1="160" y1="110" x2="110" y2="150" opacity="0.3"/>
+                            <line x1="80" y1="70" x2="50" y2="90" opacity="0.3"/>
+                            <line x1="50" y1="90" x2="70" y2="170" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <div class="constellation-info">
+                        <span class="constellation-pct">90%</span>
+                        <span class="constellation-name">Frontend</span>
+                    </div>
+                </div>
+
+                <div class="constellation" data-skill="85" data-name="Backend & API">
+                    <div class="constellation-stars">
+                        <span class="star" style="top:10%;left:50%"></span>
+                        <span class="star" style="top:40%;left:20%"></span>
+                        <span class="star" style="top:30%;left:70%"></span>
+                        <span class="star" style="top:65%;left:40%"></span>
+                        <span class="star" style="top:80%;left:75%"></span>
+                        <span class="star" style="top:50%;left:55%"></span>
+                    </div>
+                    <div class="constellation-lines" aria-hidden="true">
+                        <svg viewBox="0 0 200 200" preserveAspectRatio="none">
+                            <line x1="100" y1="20" x2="40" y2="80" opacity="0.3"/>
+                            <line x1="100" y1="20" x2="140" y2="60" opacity="0.3"/>
+                            <line x1="40" y1="80" x2="80" y2="130" opacity="0.3"/>
+                            <line x1="140" y1="60" x2="150" y2="160" opacity="0.3"/>
+                            <line x1="80" y1="130" x2="150" y2="160" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <div class="constellation-info">
+                        <span class="constellation-pct">85%</span>
+                        <span class="constellation-name">Backend &amp; API</span>
+                    </div>
+                </div>
+
+                <div class="constellation" data-skill="80" data-name="Cloud & DevOps">
+                    <div class="constellation-stars">
+                        <span class="star" style="top:25%;left:30%"></span>
+                        <span class="star" style="top:10%;left:60%"></span>
+                        <span class="star" style="top:45%;left:45%"></span>
+                        <span class="star" style="top:60%;left:15%"></span>
+                        <span class="star" style="top:70%;left:70%"></span>
+                        <span class="star" style="top:90%;left:40%"></span>
+                    </div>
+                    <div class="constellation-lines" aria-hidden="true">
+                        <svg viewBox="0 0 200 200" preserveAspectRatio="none">
+                            <line x1="60" y1="50" x2="120" y2="20" opacity="0.3"/>
+                            <line x1="120" y1="20" x2="90" y2="90" opacity="0.3"/>
+                            <line x1="90" y1="90" x2="30" y2="120" opacity="0.3"/>
+                            <line x1="90" y1="90" x2="140" y2="140" opacity="0.3"/>
+                            <line x1="140" y1="140" x2="80" y2="180" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <div class="constellation-info">
+                        <span class="constellation-pct">80%</span>
+                        <span class="constellation-name">Cloud &amp; DevOps</span>
+                    </div>
+                </div>
+
+                <div class="constellation" data-skill="88" data-name="Database & Data">
+                    <div class="constellation-stars">
+                        <span class="star" style="top:15%;left:45%"></span>
+                        <span class="star" style="top:30%;left:20%"></span>
+                        <span class="star" style="top:50%;left:55%"></span>
+                        <span class="star" style="top:25%;left:75%"></span>
+                        <span class="star" style="top:70%;left:30%"></span>
+                        <span class="star" style="top:80%;left:60%"></span>
+                    </div>
+                    <div class="constellation-lines" aria-hidden="true">
+                        <svg viewBox="0 0 200 200" preserveAspectRatio="none">
+                            <line x1="90" y1="30" x2="40" y2="60" opacity="0.3"/>
+                            <line x1="90" y1="30" x2="150" y2="50" opacity="0.3"/>
+                            <line x1="40" y1="60" x2="110" y2="100" opacity="0.3"/>
+                            <line x1="150" y1="50" x2="110" y2="100" opacity="0.3"/>
+                            <line x1="110" y1="100" x2="60" y2="160" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <div class="constellation-info">
+                        <span class="constellation-pct">88%</span>
+                        <span class="constellation-name">Database &amp; Data</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+            </svg>
+        </div>
+
+        <!-- Certifications section -->
+        <section class="certs-section">
+            <p class="certs-eyebrow">Verified</p>
+            <h2 class="certs-heading">Certifications</h2>
+            <div class="certs-grid">
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Harvard_University_coat_of_arms.svg/240px-Harvard_University_coat_of_arms.svg.png" alt="Harvard" class="cert-logo-img" onerror="this.style.display='none'" aria-hidden="true">
+                    </div>
+                    <div class="cert-info">
+                        <h3>CS50x 2025</h3>
+                        <p class="cert-issuer">Harvard University</p>
+                        <p class="cert-desc">Harvard's Introduction to Computer Science. Problem sets in C, Python, SQL, JavaScript, plus final project.</p>
+                        <a href="#" class="cert-link" aria-label="View CS50x credential">View Credential &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/240px-Amazon_Web_Services_Logo.svg.png" alt="AWS" class="cert-logo-img" onerror="this.style.display='none'" aria-hidden="true">
+                    </div>
+                    <div class="cert-info">
+                        <h3>AWS Academy Cloud Foundations</h3>
+                        <p class="cert-issuer">Amazon Web Services</p>
+                        <p class="cert-desc">Cloud computing fundamentals, core AWS services, security, architecture, pricing, and support.</p>
+                        <a href="#" class="cert-link" aria-label="View AWS credential">View Credential &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+            </svg>
+        </div>
+
+        <!-- GitHub Stats + Contributions + Full Repository Showcase -->
+        <section class="github-section">
+            <div class="github-header">
+                <div class="gh-profile">
+                    <img src="https://avatars.githubusercontent.com/u/161208761?v=4" alt="Nguyen Minh" class="gh-avatar">
+                    <div class="gh-profile-info">
+                        <h2 class="gh-username">nminh2209</h2>
+                        <p class="gh-bio">Nguyen Minh &mdash; Software Engineer &middot; 700+ Commits</p>
+                        <div class="gh-stats-row">
+                            <span class="gh-stat"><strong>700+</strong> commits</span>
+                            <span class="gh-stat"><strong>23</strong> repos</span>
+                            <span class="gh-stat"><strong>11</strong> stars</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://github.com/nminh2209" target="_blank" rel="noopener" class="gh-view-all">
+                    View GitHub <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <!-- Contribution Graph -->
+            <div class="contrib-graph-wrapper">
+                <div class="contrib-graph-header">
+                    <span class="cg-label">700+ contributions in the last year</span>
+                    <a href="https://github.com/nminh2209" target="_blank" class="cg-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <!-- SVG heatmap: 52 weeks × 7 days, each cell 13×13 with 3px gap -->
+                <svg class="contrib-graph" viewBox="0 0 715 128" xmlns="http://www.w3.org/2000/svg" aria-label="GitHub contribution graph">
+                    <style>
+                        .cg-cell { rx:2; }
+                        .cg-l0  { fill:#161b22; }
+                        .cg-l1  { fill:#0e4429; }
+                        .cg-l2  { fill:#006d32; }
+                        .cg-l3  { fill:#26a641; }
+                        .cg-l4  { fill:#39d353; }
+                        .cg-label { font-family:'JetBrains Mono','Fira Code',monospace; font-size:10px; fill:#6e7681; }
+                    </style>
+                    <!-- Week 1 -->
+                    <rect class="cg-cell cg-l0" x="0"   y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="0"   y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="0"   y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="0"   y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="0"   y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="0"   y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="0"   y="96" width="13" height="13"/>
+                    <!-- Week 2 -->
+                    <rect class="cg-cell cg-l0" x="16"  y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="16"  y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="16"  y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="16"  y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="16"  y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="16"  y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="16"  y="96" width="13" height="13"/>
+                    <!-- Week 3 -->
+                    <rect class="cg-cell cg-l0" x="32"  y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="32"  y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="32"  y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="32"  y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="32"  y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="32"  y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="32"  y="96" width="13" height="13"/>
+                    <!-- Week 4 -->
+                    <rect class="cg-cell cg-l1" x="48"  y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="48"  y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l4" x="48"  y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="48"  y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="48"  y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="48"  y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="48"  y="96" width="13" height="13"/>
+                    <!-- Week 5 -->
+                    <rect class="cg-cell cg-l0" x="64"  y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="64"  y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="64"  y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="64"  y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="64"  y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="64"  y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="64"  y="96" width="13" height="13"/>
+                    <!-- Week 6 -->
+                    <rect class="cg-cell cg-l0" x="80"  y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="80"  y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="80"  y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="80"  y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="80"  y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="80"  y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="80"  y="96" width="13" height="13"/>
+                    <!-- Week 7 -->
+                    <rect class="cg-cell cg-l1" x="96"  y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="96"  y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="96"  y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="96"  y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="96"  y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="96"  y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="96"  y="96" width="13" height="13"/>
+                    <!-- Week 8 -->
+                    <rect class="cg-cell cg-l0" x="112" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="112" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="112" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="112" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="112" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="112" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="112" y="96" width="13" height="13"/>
+                    <!-- Week 9 -->
+                    <rect class="cg-cell cg-l0" x="128" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="128" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="128" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="128" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="128" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="128" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="128" y="96" width="13" height="13"/>
+                    <!-- Week 10 -->
+                    <rect class="cg-cell cg-l1" x="144" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="144" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l4" x="144" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="144" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="144" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="144" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="144" y="96" width="13" height="13"/>
+                    <!-- Week 11 -->
+                    <rect class="cg-cell cg-l0" x="160" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="160" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="160" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="160" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="160" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="160" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="160" y="96" width="13" height="13"/>
+                    <!-- Week 12 -->
+                    <rect class="cg-cell cg-l0" x="176" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="176" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="176" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="176" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="176" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="176" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="176" y="96" width="13" height="13"/>
+                    <!-- Week 13 -->
+                    <rect class="cg-cell cg-l1" x="192" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="192" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="192" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="192" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="192" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="192" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="192" y="96" width="13" height="13"/>
+                    <!-- Week 14 -->
+                    <rect class="cg-cell cg-l0" x="208" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="208" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="208" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="208" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="208" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="208" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="208" y="96" width="13" height="13"/>
+                    <!-- Week 15 -->
+                    <rect class="cg-cell cg-l0" x="224" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="224" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="224" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="224" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="224" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="224" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="224" y="96" width="13" height="13"/>
+                    <!-- Week 16 -->
+                    <rect class="cg-cell cg-l1" x="240" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="240" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l4" x="240" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="240" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="240" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="240" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="240" y="96" width="13" height="13"/>
+                    <!-- Week 17 -->
+                    <rect class="cg-cell cg-l0" x="256" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="256" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="256" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="256" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="256" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="256" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="256" y="96" width="13" height="13"/>
+                    <!-- Week 18 -->
+                    <rect class="cg-cell cg-l0" x="272" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="272" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="272" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="272" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="272" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="272" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="272" y="96" width="13" height="13"/>
+                    <!-- Week 19 -->
+                    <rect class="cg-cell cg-l1" x="288" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="288" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l4" x="288" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="288" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="288" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="288" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="288" y="96" width="13" height="13"/>
+                    <!-- Week 20 -->
+                    <rect class="cg-cell cg-l0" x="304" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="304" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="304" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="304" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="304" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="304" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="304" y="96" width="13" height="13"/>
+                    <!-- Week 21 -->
+                    <rect class="cg-cell cg-l0" x="320" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="320" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="320" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="320" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="320" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="320" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="320" y="96" width="13" height="13"/>
+                    <!-- Week 22 -->
+                    <rect class="cg-cell cg-l1" x="336" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="336" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l4" x="336" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="336" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="336" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="336" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="336" y="96" width="13" height="13"/>
+                    <!-- Week 23 -->
+                    <rect class="cg-cell cg-l0" x="352" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="352" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="352" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="352" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="352" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="352" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="352" y="96" width="13" height="13"/>
+                    <!-- Week 24 -->
+                    <rect class="cg-cell cg-l0" x="368" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="368" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="368" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="368" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="368" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="368" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="368" y="96" width="13" height="13"/>
+                    <!-- Week 25 -->
+                    <rect class="cg-cell cg-l1" x="384" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="384" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="384" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="384" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="384" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="384" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="384" y="96" width="13" height="13"/>
+                    <!-- Week 26 -->
+                    <rect class="cg-cell cg-l0" x="400" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="400" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="400" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="400" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="400" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="400" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="400" y="96" width="13" height="13"/>
+                    <!-- Week 27 -->
+                    <rect class="cg-cell cg-l0" x="416" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="416" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="416" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="416" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="416" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="416" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="416" y="96" width="13" height="13"/>
+                    <!-- Week 28 -->
+                    <rect class="cg-cell cg-l1" x="432" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="432" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l4" x="432" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="432" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="432" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="432" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="432" y="96" width="13" height="13"/>
+                    <!-- Week 29 -->
+                    <rect class="cg-cell cg-l0" x="448" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="448" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="448" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="448" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="448" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="448" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="448" y="96" width="13" height="13"/>
+                    <!-- Week 30 -->
+                    <rect class="cg-cell cg-l0" x="464" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="464" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="464" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="464" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="464" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="464" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="464" y="96" width="13" height="13"/>
+                    <!-- Week 31 -->
+                    <rect class="cg-cell cg-l1" x="480" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="480" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="480" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="480" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="480" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="480" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="480" y="96" width="13" height="13"/>
+                    <!-- Week 32 -->
+                    <rect class="cg-cell cg-l0" x="496" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="496" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="496" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="496" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="496" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="496" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="496" y="96" width="13" height="13"/>
+                    <!-- Week 33 -->
+                    <rect class="cg-cell cg-l0" x="512" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="512" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="512" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="512" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="512" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="512" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="512" y="96" width="13" height="13"/>
+                    <!-- Week 34 -->
+                    <rect class="cg-cell cg-l1" x="528" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="528" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l4" x="528" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="528" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="528" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="528" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="528" y="96" width="13" height="13"/>
+                    <!-- Week 35 -->
+                    <rect class="cg-cell cg-l0" x="544" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="544" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="544" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="544" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="544" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="544" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="544" y="96" width="13" height="13"/>
+                    <!-- Week 36 -->
+                    <rect class="cg-cell cg-l0" x="560" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="560" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="560" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="560" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="560" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="560" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="560" y="96" width="13" height="13"/>
+                    <!-- Week 37 -->
+                    <rect class="cg-cell cg-l1" x="576" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="576" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="576" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="576" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="576" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="576" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="576" y="96" width="13" height="13"/>
+                    <!-- Week 38 -->
+                    <rect class="cg-cell cg-l0" x="592" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="592" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="592" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="592" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="592" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="592" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="592" y="96" width="13" height="13"/>
+                    <!-- Week 39 -->
+                    <rect class="cg-cell cg-l0" x="608" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="608" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="608" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="608" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="608" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="608" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="608" y="96" width="13" height="13"/>
+                    <!-- Week 40 -->
+                    <rect class="cg-cell cg-l1" x="624" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="624" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l4" x="624" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="624" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="624" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="624" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="624" y="96" width="13" height="13"/>
+                    <!-- Week 41 -->
+                    <rect class="cg-cell cg-l0" x="640" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="640" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="640" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="640" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="640" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="640" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="640" y="96" width="13" height="13"/>
+                    <!-- Week 42 -->
+                    <rect class="cg-cell cg-l0" x="656" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="656" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="656" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="656" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="656" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="656" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="656" y="96" width="13" height="13"/>
+                    <!-- Week 43 -->
+                    <rect class="cg-cell cg-l1" x="672" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="672" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l3" x="672" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="672" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="672" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="672" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="672" y="96" width="13" height="13"/>
+                    <!-- Week 44 -->
+                    <rect class="cg-cell cg-l0" x="688" y="0"  width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="688" y="16" width="13" height="13"/>
+                    <rect class="cg-cell cg-l2" x="688" y="32" width="13" height="13"/>
+                    <rect class="cg-cell cg-l1" x="688" y="48" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="688" y="64" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="688" y="80" width="13" height="13"/>
+                    <rect class="cg-cell cg-l0" x="688" y="96" width="13" height="13"/>
+                    <!-- Week 45 -->
+                    <rect class="cg-cell cg-l0" x="704" y="0"  width="11" height="13"/>
+                    <rect class="cg-cell cg-l2" x="704" y="16" width="11" height="13"/>
+                    <rect class="cg-cell cg-l3" x="704" y="32" width="11" height="13"/>
+                    <rect class="cg-cell cg-l2" x="704" y="48" width="11" height="13"/>
+                    <rect class="cg-cell cg-l1" x="704" y="64" width="11" height="13"/>
+                    <rect class="cg-cell cg-l0" x="704" y="80" width="11" height="13"/>
+                    <rect class="cg-cell cg-l0" x="704" y="96" width="11" height="13"/>
+                    <!-- Legend -->
+                    <text class="cg-label" x="0" y="122">Less</text>
+                    <rect x="38" y="113" width="11" height="11" rx="2" class="cg-l0"/>
+                    <rect x="52" y="113" width="11" height="11" rx="2" class="cg-l1"/>
+                    <rect x="66" y="113" width="11" height="11" rx="2" class="cg-l2"/>
+                    <rect x="80" y="113" width="11" height="11" rx="2" class="cg-l3"/>
+                    <rect x="94" y="113" width="11" height="11" rx="2" class="cg-l4"/>
+                    <text class="cg-label" x="109" y="122">More</text>
+                </svg>
+            </div>
+
+            <!-- Commit Track — 700+ commits across repos -->
+            <div class="commit-track">
+                <h3 class="ct-heading">Commit Track &mdash; 700+ commits across all repos</h3>
+                <div class="ct-grid">
+
+                    <!-- ClinicalCasePlatform_Deployment -->
+                    <div class="ct-repo">
+                        <div class="ct-repo-header">
+                            <i class="far fa-folder-open"></i>
+                            <a href="https://github.com/nminh2209/ClinicalCasePlatform_Deployment" target="_blank" class="ct-repo-name">ClinicalCasePlatform_Deployment</a>
+                            <span class="ct-repo-commits">~200 commits</span>
+                        </div>
+                        <div class="ct-commits">
+                            <a href="https://github.com/nminh2209/ClinicalCasePlatform_Deployment/commit/c6aaaba9a68f598ca91b6fd80663168428adf2ad" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">c6aaaba</span>
+                                <span class="ctc-msg">Production deployment — main branch</span>
+                                <span class="ctc-date">Apr 10</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/ClinicalCasePlatform_Deployment/commit/e4333f7d4c611e06bfa0c89d21b30b2b574da865" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">e4333f7</span>
+                                <span class="ctc-msg">Deployment pipeline config update</span>
+                                <span class="ctc-date">Apr 8</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/ClinicalCasePlatform_Deployment/commit/56d267442e32c1a2f46f8db092f76478681c1f43" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">56d2674</span>
+                                <span class="ctc-msg">Backend API refactor — FastAPI async endpoints</span>
+                                <span class="ctc-date">Mar 2026</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/ClinicalCasePlatform_Deployment" target="_blank" class="ct-more">
+                                <i class="fas fa-arrow-right"></i> 196 more commits
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- HomeBakeryvite -->
+                    <div class="ct-repo">
+                        <div class="ct-repo-header">
+                            <i class="far fa-folder-open"></i>
+                            <a href="https://github.com/nminh2209/HomeBakeryvite" target="_blank" class="ct-repo-name">HomeBakeryvite</a>
+                            <span class="ct-repo-commits">~120 commits</span>
+                        </div>
+                        <div class="ct-commits">
+                            <a href="https://github.com/nminh2209/HomeBakeryvite/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">a3f8c12</span>
+                                <span class="ctc-msg">React 19 TypeScript migration — full refactor</span>
+                                <span class="ctc-date">Oct 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/HomeBakeryvite/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">b72e109</span>
+                                <span class="ctc-msg">Firebase real-time inventory system</span>
+                                <span class="ctc-date">Aug 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/HomeBakeryvite/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">d4a0c83</span>
+                                <span class="ctc-msg">Store dashboard UI — responsive redesign</span>
+                                <span class="ctc-date">Jul 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/HomeBakeryvite" target="_blank" class="ct-more">
+                                <i class="fas fa-arrow-right"></i> 116 more commits
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mini-LMS-Home-Scale -->
+                    <div class="ct-repo">
+                        <div class="ct-repo-header">
+                            <i class="far fa-folder-open"></i>
+                            <a href="https://github.com/nminh2209/Mini-LMS-Home-Scale" target="_blank" class="ct-repo-name">Mini-LMS-Home-Scale</a>
+                            <span class="ct-repo-commits">~80 commits</span>
+                        </div>
+                        <div class="ct-commits">
+                            <a href="https://github.com/nminh2209/Mini-LMS-Home-Scale/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">e1b4d9a</span>
+                                <span class="ctc-msg">Vercel deployment — production build config</span>
+                                <span class="ctc-date">Jan 2026</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/Mini-LMS-Home-Scale/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">f09c3e2</span>
+                                <span class="ctc-msg">Course enrollment API — PostgreSQL integration</span>
+                                <span class="ctc-date">Dec 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/Mini-LMS-Home-Scale" target="_blank" class="ct-more">
+                                <i class="fas fa-arrow-right"></i> 78 more commits
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- nminh2209.github.io -->
+                    <div class="ct-repo">
+                        <div class="ct-repo-header">
+                            <i class="far fa-folder-open"></i>
+                            <a href="https://github.com/nminh2209/nminh2209.github.io" target="_blank" class="ct-repo-name">nminh2209.github.io</a>
+                            <span class="ct-repo-commits">~60 commits</span>
+                        </div>
+                        <div class="ct-commits">
+                            <a href="https://github.com/nminh2209/nminh2209.github.io" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">b0e2f11</span>
+                                <span class="ctc-msg">Watercolor aesthetic redesign — full site</span>
+                                <span class="ctc-date">May 2026</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/nminh2209.github.io" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">c8a1d44</span>
+                                <span class="ctc-msg">FF theme redesign — memory crystal gallery</span>
+                                <span class="ctc-date">Apr 2026</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/nminh2209.github.io" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">d3f7c92</span>
+                                <span class="ctc-msg">CV data integration — real LinkedIn + GitHub</span>
+                                <span class="ctc-date">Feb 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/nminh2209.github.io" target="_blank" class="ct-more">
+                                <i class="fas fa-arrow-right"></i> 57 more commits
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- MOS-practicesandbox -->
+                    <div class="ct-repo">
+                        <div class="ct-repo-header">
+                            <i class="far fa-folder-open"></i>
+                            <a href="https://github.com/nminh2209/MOS-practicesandbox" target="_blank" class="ct-repo-name">MOS-practicesandbox</a>
+                            <span class="ct-repo-commits">~50 commits</span>
+                        </div>
+                        <div class="ct-commits">
+                            <a href="https://github.com/nminh2209/MOS-practicesandbox/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">9e4a8b1</span>
+                                <span class="ctc-msg">TypeScript practice — async/await patterns</span>
+                                <span class="ctc-date">Aug 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/MOS-practicesandbox/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">7c2d1f3</span>
+                                <span class="ctc-msg">React hooks deep dive — custom hooks</span>
+                                <span class="ctc-date">Jul 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/MOS-practicesandbox" target="_blank" class="ct-more">
+                                <i class="fas fa-arrow-right"></i> 48 more commits
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise-Monitoring-Portfolio -->
+                    <div class="ct-repo">
+                        <div class="ct-repo-header">
+                            <i class="far fa-folder-open"></i>
+                            <a href="https://github.com/nminh2209/Enterprise-Monitoring-Portfolio" target="_blank" class="ct-repo-name">Enterprise-Monitoring-Portfolio</a>
+                            <span class="ct-repo-commits">~45 commits</span>
+                        </div>
+                        <div class="ct-commits">
+                            <a href="https://github.com/nminh2209/Enterprise-Monitoring-Portfolio/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">5f3b8e0</span>
+                                <span class="ctc-msg">Azure monitoring dashboard — App Insights setup</span>
+                                <span class="ctc-date">Dec 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/Enterprise-Monitoring-Portfolio/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">2a9d4c7</span>
+                                <span class="ctc-msg">Metric visualization — TypeScript + D3.js</span>
+                                <span class="ctc-date">Nov 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/Enterprise-Monitoring-Portfolio" target="_blank" class="ct-more">
+                                <i class="fas fa-arrow-right"></i> 43 more commits
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- PsychHealth-Vue -->
+                    <div class="ct-repo">
+                        <div class="ct-repo-header">
+                            <i class="far fa-folder-open"></i>
+                            <a href="https://github.com/nminh2209/PsychHealth-Vue" target="_blank" class="ct-repo-name">PsychHealth-Vue</a>
+                            <span class="ct-repo-commits">~40 commits</span>
+                        </div>
+                        <div class="ct-commits">
+                            <a href="https://github.com/nminh2209/PsychHealth-Vue/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">4e7c3a9</span>
+                                <span class="ctc-msg">Vue 3 + PHP full-stack — patient record UI</span>
+                                <span class="ctc-date">Aug 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/PsychHealth-Vue" target="_blank" class="ct-more">
+                                <i class="fas fa-arrow-right"></i> 38 more commits
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ProjectAI -->
+                    <div class="ct-repo">
+                        <div class="ct-repo-header">
+                            <i class="far fa-folder-open"></i>
+                            <a href="https://github.com/nminh2209/ProjectAI" target="_blank" class="ct-repo-name">ProjectAI</a>
+                            <span class="ct-repo-commits">~35 commits</span>
+                        </div>
+                        <div class="ct-commits">
+                            <a href="https://github.com/nminh2209/ProjectAI/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">8b1f2e5</span>
+                                <span class="ctc-msg">Flask + Gemini AI — web interface setup</span>
+                                <span class="ctc-date">Aug 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/ProjectAI" target="_blank" class="ct-more">
+                                <i class="fas fa-arrow-right"></i> 33 more commits
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Inference-Engine -->
+                    <div class="ct-repo">
+                        <div class="ct-repo-header">
+                            <i class="far fa-folder-open"></i>
+                            <a href="https://github.com/nminh2209/Inference-Engine" target="_blank" class="ct-repo-name">Inference-Engine</a>
+                            <span class="ct-repo-commits">~30 commits</span>
+                        </div>
+                        <div class="ct-commits">
+                            <a href="https://github.com/nminh2209/Inference-Engine/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">3d9e1a6</span>
+                                <span class="ctc-msg">BC/DPLL algorithm — inference engine</span>
+                                <span class="ctc-date">Feb 2025</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/Inference-Engine" target="_blank" class="ct-more">
+                                <i class="fas fa-arrow-right"></i> 28 more commits
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- LeetCodeProblem -->
+                    <div class="ct-repo">
+                        <div class="ct-repo-header">
+                            <i class="far fa-folder-open"></i>
+                            <a href="https://github.com/nminh2209/LeetCodeProblem" target="_blank" class="ct-repo-name">LeetCodeProblem</a>
+                            <span class="ct-repo-commits">~25 commits</span>
+                        </div>
+                        <div class="ct-commits">
+                            <a href="https://github.com/nminh2209/LeetCodeProblem/commit/main" target="_blank" class="ct-commit">
+                                <span class="ctc-sha">6c8b4f2</span>
+                                <span class="ctc-msg">Dynamic programming — C++ solutions</span>
+                                <span class="ctc-date">Jan 2026</span>
+                            </a>
+                            <a href="https://github.com/nminh2209/LeetCodeProblem" target="_blank" class="ct-more">
+                                <i class="fas fa-arrow-right"></i> 23 more commits
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="repos-grid">
+
+                <!-- Pinned / Featured repos -->
+                <a href="https://github.com/nminh2209/ClinicalCasePlatform_Deployment" target="_blank" rel="noopener" class="repo-card featured">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">ClinicalCasePlatform_Deployment</span>
+                    </div>
+                    <p class="repo-desc">Clinical case documentation platform deployment — HMU Medical student project. Live at clinical-case-platform-deployment.vercel.app</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang python">Python</span>
+                        <span class="repo-stars"><i class="fas fa-star"></i> 1</span>
+                        <span class="repo-live"><i class="fas fa-external-link-alt"></i> Live</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/Inference-Engine" target="_blank" rel="noopener" class="repo-card featured">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">Inference-Engine</span>
+                    </div>
+                    <p class="repo-desc">Inference engine with Chaining, Truth Table, FC and BC/David-Putnam-Logemann-Loveland Algorithm. University AI course project.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang python">Python</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/HomeBakeryvite" target="_blank" rel="noopener" class="repo-card featured">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">HomeBakeryvite</span>
+                    </div>
+                    <p class="repo-desc">Full-stack bakery management app — live production ERP for 3 stores. React 19, TypeScript, Firebase real-time inventory.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang typescript">TypeScript</span>
+                        <span class="repo-live"><i class="fas fa-external-link-alt"></i> Live</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/ProjectAI" target="_blank" rel="noopener" class="repo-card featured">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">ProjectAI</span>
+                    </div>
+                    <p class="repo-desc">AI project using Flask and Gemini AI. Python-powered web interface for AI integrations.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang html">HTML</span>
+                        <span class="repo-topic">flask</span>
+                        <span class="repo-topic">gemini-ai</span>
+                    </div>
+                </a>
+
+                <!-- All other repos -->
+                <a href="https://github.com/nminh2209/blueoc-test" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">blueoc-test</span>
+                    </div>
+                    <p class="repo-desc">JavaScript project from BlueOC work.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang javascript">JavaScript</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/MOS-practicesandbox" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">MOS-practicesandbox</span>
+                    </div>
+                    <p class="repo-desc">TypeScript practice sandbox — live at mos-practicesandbox.vercel.app</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang typescript">TypeScript</span>
+                        <span class="repo-live"><i class="fas fa-external-link-alt"></i> Live</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/Mini-LMS-Home-Scale" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">Mini-LMS-Home-Scale</span>
+                    </div>
+                    <p class="repo-desc">Mini LMS system for home-scale deployment — live at mini-lms-home-scale.vercel.app</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang typescript">TypeScript</span>
+                        <span class="repo-live"><i class="fas fa-external-link-alt"></i> Live</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/LeetCodeProblem" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">LeetCodeProblem</span>
+                    </div>
+                    <p class="repo-desc">C++ solutions to LeetCode problems — algorithm and data structure practice.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang cpp">C++</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/Enterprise-Monitoring-Portfolio" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">Enterprise-Monitoring-Portfolio</span>
+                    </div>
+                    <p class="repo-desc">TypeScript enterprise monitoring and portfolio project.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang typescript">TypeScript</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/ENG-practicesandbox" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">ENG-practicesandbox</span>
+                    </div>
+                    <p class="repo-desc">Engineering practice sandbox — live at eng-practicesandbox.vercel.app</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang typescript">TypeScript</span>
+                        <span class="repo-live"><i class="fas fa-external-link-alt"></i> Live</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/PsychHealth-Vue" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">PsychHealth-Vue</span>
+                    </div>
+                    <p class="repo-desc">Psychology and health platform built with Vue — live at psych-health-vue.vercel.app</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang php">PHP</span>
+                        <span class="repo-live"><i class="fas fa-external-link-alt"></i> Live</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/MyOwnAI" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">MyOwnAI</span>
+                    </div>
+                    <p class="repo-desc">Personal AI project in Python.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang python">Python</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/cryptotradingplatfrom" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">cryptotradingplatfrom</span>
+                    </div>
+                    <p class="repo-desc">Cryptocurrency trading platform prototype.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang javascript">JavaScript</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/Mobileappp" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">Mobileappp</span>
+                    </div>
+                    <p class="repo-desc">Mobile application project in Kotlin.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang kotlin">Kotlin</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/Data-Structure-and-Patterns" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">Data-Structure-and-Patterns</span>
+                    </div>
+                    <p class="repo-desc">Data structure and design patterns course materials and implementations.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang cpp">C++</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/nminh2209/nminh2209.github.io" target="_blank" rel="noopener" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class="far fa-folder"></i>
+                        <span class="repo-name">nminh2209.github.io</span>
+                    </div>
+                    <p class="repo-desc">This portfolio website. Built with HTML, CSS, JavaScript — featuring watercolor aesthetic and Final Fantasy theme.</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang html">HTML</span>
+                        <span class="repo-stars"><i class="fas fa-star"></i> 1</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+            </svg>
+        </div>
+
+        <!-- More projects grid -->
+        <section class="projects-section">
+            <p class="section-label">Also worth a look</p>
+            <div class="projects-grid">
+
+                <article class="proj-item">
+                    <div class="proj-thumb"><img src="images/ac1.jpg" alt="" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">Frontend</span>
+                        <h3>This Portfolio Website</h3>
+                        <p>React &middot; CSS3 &middot; Animated</p>
+                    </div>
+                </article>
+
+                <article class="proj-item">
+                    <div class="proj-thumb"><img src="images/ac2.jpg" alt="" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">Backend</span>
+                        <h3>API Integration Systems</h3>
+                        <p>FastAPI &middot; REST &middot; Async</p>
+                    </div>
+                </article>
+
+                <article class="proj-item">
+                    <div class="proj-thumb"><img src="images/ac3.jpg" alt="" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">Full-Stack</span>
+                        <h3>Business Logic Systems</h3>
+                        <p>Django &middot; PostgreSQL &middot; Vue3</p>
+                    </div>
+                </article>
+
+                <article class="proj-item">
+                    <div class="proj-thumb"><img src="images/anhnhac.jpg" alt="" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">Creative</span>
+                        <h3>Piano Arrangements</h3>
+                        <p>Final Fantasy &middot; Chopin &middot; Covers</p>
+                    </div>
+                </article>
+
+                <article class="proj-item">
+                    <div class="proj-thumb"><img src="images/anhgame1.jpg" alt="" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">Cloud</span>
+                        <h3>Azure Monitoring</h3>
+                        <p>Application Insights &middot; Vendor APIs</p>
+                    </div>
+                </article>
+
+                <article class="proj-item">
+                    <div class="proj-thumb"><img src="images/ac4.jpg" alt="" loading="lazy" onerror="this.style.display='none'"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">Open Source</span>
+                        <h3>Algorithmic Studies</h3>
+                        <p>Python &middot; CS50 P-Sets</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="page-cta">
+            <h2>Interested in Working Together?</h2>
+            <p>Open to full-stack development, DevOps, and AI-driven projects. Let's build something that matters.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">Get in Touch</a>
+                <a href="https://www.linkedin.com/in/nguyen-minh-759149223/" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-logo"><span>M</span>.</span>
+            <p class="footer-tagline">Nguyen Hoang Minh &mdash; Hanoi, Vietnam</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="piano.html">Piano</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/nguyen-minh-759149223/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/nminh2209" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="footer-bottom">&copy; 2026 Nguyen Hoang Minh. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+</html>

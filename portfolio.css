@@ -1,0 +1,359 @@
+/* ============================================
+   PORTFOLIO PAGE — Memory Crystal Gallery
+   Dark starry-sky aesthetic
+   ============================================ */
+
+/* Stars canvas */
+#stars-canvas {
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+    width: 100%; height: 100%;
+}
+
+/* ============================================
+   PAGE HERO
+   ============================================ */
+.page-hero {
+    position: relative; z-index: 3;
+    padding: calc(72px + 60px) 60px 40px;
+    animation: fadeUp 0.8s ease both;
+}
+.page-eyebrow {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.7rem; font-weight: 300; letter-spacing: 0.28em;
+    text-transform: uppercase; color: #c9a84c; margin-bottom: 18px;
+}
+.page-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 400; font-style: italic;
+    line-height: 1.05; letter-spacing: -0.02em; color: #faf7f4;
+}
+.page-title em { color: #e8c96a; }
+.page-subtitle {
+    font-size: 0.8rem; font-weight: 300; color: rgba(250,247,244,0.45);
+    margin-top: 16px; letter-spacing: 0.12em; text-transform: uppercase;
+}
+
+/* ============================================
+   MEMORY CRYSTALS — The core feature
+   ============================================ */
+.crystals-section {
+    position: relative; z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 72px;
+}
+
+.memory-crystal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeUp 0.9s ease both;
+}
+.crystal-1 { animation-delay: 0.1s; }
+.crystal-2 { animation-delay: 0.25s; }
+.crystal-3 { animation-delay: 0.4s; }
+
+.crystal-glow-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%; height: 120%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    animation: crystal-pulse 4s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes crystal-pulse {
+    0%, 100% { opacity: 0.6; transform: translate(-50%,-50%) scale(1); }
+    50%       { opacity: 1;   transform: translate(-50%,-50%) scale(1.04); }
+}
+
+.crystal-frame {
+    width: 100%;
+    position: relative;
+    padding: 3px;
+    background: linear-gradient(135deg, #c9a84c 0%, #f5e6b8 30%, #c9a84c 50%, #f5e6b8 70%, #c9a84c 100%);
+    clip-path: polygon(20px 0%, calc(100% - 20px) 0%, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0% calc(100% - 20px), 0% 20px);
+}
+.crystal-frame::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: linear-gradient(135deg, #c9a84c 0%, #f5e6b8 30%, #c9a84c 50%, #f5e6b8 70%, #c9a84c 100%);
+    clip-path: polygon(18px 0%, calc(100% - 18px) 0%, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0% calc(100% - 18px), 0% 18px);
+    opacity: 0.6;
+}
+
+.crystal-inner {
+    position: relative;
+    background: rgba(10, 8, 16, 0.92);
+    clip-path: polygon(22px 0%, calc(100% - 22px) 0%, 100% 22px, 100% calc(100% - 22px), calc(100% - 22px) 100%, 22px 100%, 0% calc(100% - 22px), 0% 22px);
+    overflow: hidden;
+}
+
+.crystal-image-area {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.crystal-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: saturate(0.95) brightness(0.85);
+    transition: transform 0.6s ease, filter 0.4s;
+}
+.memory-crystal:hover .crystal-portrait {
+    transform: scale(1.04);
+    filter: saturate(1.1) brightness(0.95);
+}
+
+/* Prism beams */
+.crystal-prism { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.prism-beam {
+    position: absolute; width: 2px; height: 150%; top: -25%;
+    background: linear-gradient(to bottom, transparent, rgba(200,180,240,0.15), rgba(255,220,180,0.1), transparent);
+    animation: prism-shift 6s ease-in-out infinite;
+}
+.beam-1 { left: 20%; animation-delay: 0s;   transform: rotate(15deg); }
+.beam-2 { left: 50%; animation-delay: 2s;   transform: rotate(0deg); }
+.beam-3 { left: 75%; animation-delay: 4s;   transform: rotate(-15deg); }
+@keyframes prism-shift {
+    0%, 100% { opacity: 0.3; }
+    50%       { opacity: 0.8; }
+}
+
+/* Ornate corners */
+.crystal-corner { position: absolute; width: 20px; height: 20px; z-index: 5; }
+.crystal-corner::before, .crystal-corner::after { content: ''; position: absolute; background: #c9a84c; }
+.crystal-corner::before { width: 100%; height: 1px; }
+.crystal-corner::after  { width: 1px; height: 100%; }
+.tl { top: 4px; left: 4px; }
+.tl::before { top: 0; left: 0; }
+.tl::after  { top: 0; left: 0; }
+.tr { top: 4px; right: 4px; }
+.tr::before { top: 0; right: 0; }
+.tr::after  { top: 0; right: 0; }
+.bl { bottom: 4px; left: 4px; }
+.bl::before { bottom: 0; left: 0; }
+.bl::after  { bottom: 0; left: 0; }
+.br { bottom: 4px; right: 4px; }
+.br::before { bottom: 0; right: 0; }
+.br::after  { bottom: 0; right: 0; }
+
+/* Parchment scroll content */
+.crystal-content { width: 100%; margin-top: 24px; }
+.parchment-scroll {
+    background: rgba(10, 8, 22, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    padding: 24px 24px 28px;
+    position: relative;
+}
+.parchment-scroll::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 23px, rgba(201,168,76,0.04) 23px, rgba(201,168,76,0.04) 24px);
+    border-radius: 4px;
+    pointer-events: none;
+}
+.scroll-category { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.62rem; font-weight:400; letter-spacing:0.3em; text-transform:uppercase; color:#c9a84c; margin-bottom:8px; }
+.scroll-title { font-family:'Playfair Display',Georgia,serif; font-size:1.3rem; font-weight:400; font-style:italic; color:#faf7f4; margin-bottom:14px; }
+.scroll-divider { width:100%; height:1px; background:linear-gradient(90deg,#c9a84c,transparent); margin-bottom:14px; }
+.scroll-theme { font-family:'Playfair Display',Georgia,serif; font-size:0.9rem; font-weight:400; font-style:italic; color:#b8860b; margin-bottom:10px; }
+.scroll-details { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.88rem; font-weight:300; color:rgba(250,247,244,0.5); line-height:1.6; margin-bottom:8px; }
+.scroll-desc { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.9rem; font-weight:300; color:rgba(250,247,244,0.6); line-height:1.7; margin-bottom:12px; }
+
+/* ============================================
+   SKILLS AS CONSTELLATIONS
+   ============================================ */
+.constellations-section {
+    position: relative; z-index: 3;
+    padding: 64px 60px 72px;
+    background: rgba(10,8,16,0.6);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.constellations-eyebrow { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.68rem; font-weight:300; letter-spacing:0.28em; text-transform:uppercase; color:#c9a84c; text-align:center; margin-bottom:16px; }
+.constellations-heading { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,3.5vw,2.4rem); font-weight:400; font-style:italic; color:#faf7f4; text-align:center; margin-bottom:48px; letter-spacing:-0.01em; }
+.constellations-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:1000px; margin:0 auto; }
+
+.constellation {
+    position: relative; aspect-ratio:1;
+    background: rgba(10,8,16,0.4); border:1px solid rgba(201,168,76,0.12); border-radius:50%; overflow:hidden; cursor:default; transition:border-color 0.3s;
+}
+.constellation:hover { border-color:rgba(201,168,76,0.4); }
+
+.constellation-stars { position:absolute; inset:0; }
+.star {
+    position:absolute; width:3px; height:3px; border-radius:50%; background:#e8d8a0;
+    box-shadow:0 0 6px 2px rgba(232,216,160,0.5); animation:star-twinkle 2s ease-in-out infinite;
+}
+.star:nth-child(1){animation-delay:0s;animation-duration:2.1s}
+.star:nth-child(2){animation-delay:0.3s;animation-duration:1.8s}
+.star:nth-child(3){animation-delay:0.6s;animation-duration:2.4s}
+.star:nth-child(4){animation-delay:0.9s;animation-duration:1.6s}
+.star:nth-child(5){animation-delay:1.2s;animation-duration:2.2s}
+.star:nth-child(6){animation-delay:0.4s;animation-duration:1.9s}
+.star:nth-child(7){animation-delay:1.5s;animation-duration:2.5s}
+@keyframes star-twinkle {
+    0%,100%{opacity:0.4;transform:scale(1)}
+    50%{opacity:1;transform:scale(1.4)}
+}
+
+.constellation-lines { position:absolute; inset:0; }
+.constellation-lines svg { width:100%; height:100%; }
+.constellation-lines line { stroke:rgba(201,168,76,0.25); stroke-width:0.5; }
+
+.constellation-info { position:absolute; bottom:0; left:0; right:0; text-align:center; padding:8px 8px 12px; background:linear-gradient(transparent,rgba(10,8,16,0.7)); }
+.constellation-pct { display:block; font-family:'Playfair Display',Georgia,serif; font-size:1.1rem; font-weight:400; font-style:italic; color:#c9a84c; line-height:1; margin-bottom:4px; }
+.constellation-name { display:block; font-family:'Cormorant Garamond',Georgia,serif; font-size:0.62rem; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:rgba(250,247,244,0.45); }
+
+/* ============================================
+   CERTIFICATIONS SECTION
+   ============================================ */
+.certs-section { position:relative; z-index:3; padding:56px 60px 72px; border-top:1px solid rgba(201,168,76,0.08); }
+.certs-eyebrow { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.68rem; font-weight:300; letter-spacing:0.28em; text-transform:uppercase; color:#c9a84c; text-align:center; margin-bottom:16px; }
+.certs-heading { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,3.5vw,2.4rem); font-weight:400; font-style:italic; color:#faf7f4; text-align:center; margin-bottom:48px; }
+.certs-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:900px; margin:0 auto; }
+
+.cert-card {
+    display:flex; gap:24px;
+    background:rgba(10,8,22,0.8); border:1px solid rgba(201,168,76,0.25); border-radius:6px; padding:28px;
+    transition:border-color 0.3s,box-shadow 0.3s,background 0.3s;
+}
+.cert-card:hover { background:rgba(10,8,22,0.95); border-color:rgba(201,168,76,0.45); box-shadow:0 8px 32px rgba(201,168,76,0.12); }
+.cert-icon { width:48px; height:48px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+.cert-logo-img { width:48px; height:48px; object-fit:contain; filter:brightness(0) invert(1) brightness(0.6); opacity:0.7; }
+.cert-info {}
+.cert-info h3 { font-family:'Playfair Display',Georgia,serif; font-size:1rem; font-weight:400; font-style:italic; color:#faf7f4; margin-bottom:4px; }
+.cert-issuer { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.72rem; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:#c9a84c; margin-bottom:10px; }
+.cert-desc { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.88rem; font-weight:300; color:rgba(250,247,244,0.5); line-height:1.65; margin-bottom:12px; }
+.cert-link { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.72rem; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:#c9a84c; transition:color 0.2s,letter-spacing 0.2s; }
+.cert-link:hover { color:#e8c96a; letter-spacing:0.15em; }
+
+/* ============================================
+   GITHUB SECTION
+   ============================================ */
+.github-section { position:relative; z-index:3; padding:56px 60px 72px; border-top:1px solid rgba(201,168,76,0.08); }
+
+.github-header { display:flex; align-items:center; justify-content:space-between; gap:24px; max-width:1000px; margin:0 auto 40px; flex-wrap:wrap; }
+.gh-profile { display:flex; align-items:center; gap:20px; }
+.gh-avatar { width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid rgba(201,168,76,0.3); }
+.gh-username { font-family:'Playfair Display',Georgia,serif; font-size:1.3rem; font-weight:400; font-style:italic; color:#faf7f4; margin-bottom:4px; }
+.gh-bio { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.88rem; font-weight:300; color:rgba(250,247,244,0.45); margin-bottom:8px; }
+.gh-stats-row { display:flex; gap:16px; }
+.gh-stat { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.8rem; font-weight:300; color:rgba(250,247,244,0.4); }
+.gh-stat strong { font-weight:600; color:#faf7f4; }
+.gh-view-all { display:inline-flex; align-items:center; gap:8px; padding:8px 20px; border:1px solid rgba(201,168,76,0.3); border-radius:2px; font-family:'Cormorant Garamond',Georgia,serif; font-size:0.82rem; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:#c9a84c; transition:background 0.2s,border-color 0.2s; }
+.gh-view-all:hover { background:rgba(201,168,76,0.1); border-color:rgba(201,168,76,0.5); }
+
+/* Contribution Graph */
+.contrib-graph-wrapper { max-width:1000px; margin:0 auto 40px; background:rgba(10,8,22,0.8); border:1px solid rgba(201,168,76,0.15); border-radius:6px; padding:20px 24px 16px; }
+.contrib-graph-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+.cg-label { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.85rem; font-weight:300; color:rgba(250,247,244,0.4); }
+.cg-link { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.78rem; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:rgba(201,168,76,0.45); transition:color 0.2s; }
+.cg-link:hover { color:#c9a84c; }
+.contrib-graph { width:100%; height:auto; display:block; }
+
+/* Commit Track */
+.commit-track { max-width:1000px; margin:0 auto 48px; }
+.ct-heading { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.72rem; font-weight:300; letter-spacing:0.25em; text-transform:uppercase; color:rgba(201,168,76,0.45); margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid rgba(201,168,76,0.1); }
+.ct-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+.ct-repo { background:rgba(10,8,22,0.8); border:1px solid rgba(201,168,76,0.15); border-radius:6px; padding:18px; transition:border-color 0.2s; }
+.ct-repo:hover { border-color:rgba(201,168,76,0.3); }
+.ct-repo-header { display:flex; align-items:center; gap:8px; margin-bottom:14px; flex-wrap:wrap; }
+.ct-repo-header i { color:rgba(201,168,76,0.45); font-size:0.85rem; }
+.ct-repo-name { font-family:'Playfair Display',Georgia,serif; font-size:0.88rem; font-weight:400; font-style:italic; color:#faf7f4; flex:1; min-width:0; word-break:break-all; transition:color 0.2s; }
+.ct-repo-name:hover { color:#c9a84c; }
+.ct-repo-commits { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.72rem; font-weight:300; color:rgba(201,168,76,0.4); white-space:nowrap; flex-shrink:0; }
+.ct-commits { display:flex; flex-direction:column; gap:6px; }
+.ct-commit { display:grid; grid-template-columns:56px 1fr auto; gap:8px; align-items:baseline; padding:6px 8px; border-radius:3px; background:rgba(250,247,244,0.03); text-decoration:none; transition:background 0.15s; }
+.ct-commit:hover { background:rgba(250,247,244,0.07); }
+.ctc-sha { font-family:'JetBrains Mono','Fira Code',monospace; font-size:0.68rem; color:rgba(201,168,76,0.45); letter-spacing:0.02em; }
+.ctc-msg { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.88rem; font-weight:400; color:rgba(250,247,244,0.6); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ctc-date { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.75rem; font-weight:300; color:rgba(250,247,244,0.3); white-space:nowrap; flex-shrink:0; }
+.ct-more { display:flex; align-items:center; gap:6px; padding:6px 8px; font-family:'Cormorant Garamond',Georgia,serif; font-size:0.82rem; font-weight:300; color:rgba(201,168,76,0.4); text-decoration:none; transition:color 0.2s; }
+.ct-more:hover { color:#c9a84c; }
+
+/* ============================================
+   REPO CARDS
+   ============================================ */
+.repos-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1000px; margin:0 auto; }
+
+.repo-card {
+    display:block;
+    background:rgba(10,8,22,0.8); border:1px solid rgba(201,168,76,0.2); border-radius:6px; padding:20px;
+    text-decoration:none;
+    transition:border-color 0.25s,box-shadow 0.25s,transform 0.25s,background 0.25s;
+}
+.repo-card:hover { background:rgba(10,8,22,0.95); border-color:rgba(201,168,76,0.4); box-shadow:0 8px 32px rgba(201,168,76,0.1); transform:translateY(-3px); }
+.repo-card.featured { border-color:rgba(201,168,76,0.35); background:rgba(10,8,22,0.9); }
+.repo-card-header { display:flex; align-items:flex-start; gap:8px; margin-bottom:10px; }
+.repo-card-header i { color:rgba(201,168,76,0.45); font-size:0.9rem; padding-top:3px; flex-shrink:0; }
+.repo-name { font-family:'Playfair Display',Georgia,serif; font-size:0.95rem; font-weight:400; font-style:italic; color:#faf7f4; word-break:break-all; }
+.repo-desc { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.88rem; font-weight:300; color:rgba(250,247,244,0.55); line-height:1.65; margin-bottom:14px; }
+.repo-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.repo-lang { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.75rem; font-weight:400; padding:2px 8px; border-radius:100px; }
+.repo-lang.python{color:#a78bfa;border:1px solid rgba(167,139,250,0.3)}
+.repo-lang.typescript{color:#60a5fa;border:1px solid rgba(96,165,250,0.3)}
+.repo-lang.javascript{color:#facc15;border:1px solid rgba(250,204,21,0.3)}
+.repo-lang.cpp{color:#f97316;border:1px solid rgba(249,115,22,0.3)}
+.repo-lang.html{color:#fb923c;border:1px solid rgba(251,146,60,0.3)}
+.repo-lang.php{color:#a78bfa;border:1px solid rgba(167,139,250,0.3)}
+.repo-lang.kotlin{color:#34d399;border:1px solid rgba(52,211,153,0.3)}
+.repo-lang.csharp{color:#60a5fa;border:1px solid rgba(96,165,250,0.3)}
+.repo-lang.ruby{color:#f43f5e;border:1px solid rgba(244,63,94,0.3)}
+.repo-lang.css{color:#60a5fa;border:1px solid rgba(96,165,250,0.3)}
+.repo-stars { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.75rem; color:rgba(250,247,244,0.3); display:flex; align-items:center; gap:4px; }
+.repo-live { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.72rem; color:rgba(201,168,76,0.45); display:flex; align-items:center; gap:4px; }
+.repo-topic { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.72rem; color:rgba(201,168,76,0.45); }
+
+/* ============================================
+   PROJECTS GRID
+   ============================================ */
+.projects-section { padding:72px 60px 80px; }
+.section-label { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.7rem; font-weight:300; letter-spacing:0.2em; text-transform:uppercase; color:rgba(250,247,244,0.3); margin-bottom:40px; text-align:center; }
+.projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px 32px; max-width:1100px; margin:0 auto; }
+.proj-item { cursor:pointer; }
+.proj-thumb { aspect-ratio:3/4; border-radius:3px; overflow:hidden; background:rgba(250,247,244,0.06); margin-bottom:18px; border:1px solid rgba(201,168,76,0.1); }
+.proj-thumb img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease,filter 0.5s; filter:saturate(0.9); }
+.proj-item:hover .proj-thumb img { transform:scale(1.04); filter:saturate(1.1); }
+.proj-info { padding:0 4px; }
+.proj-cat { display:block; font-size:0.65rem; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:#c9a84c; margin-bottom:6px; }
+.proj-info h3 { font-family:'Playfair Display',Georgia,serif; font-size:1.1rem; font-weight:400; font-style:italic; color:#faf7f4; margin-bottom:4px; }
+.proj-info p { font-size:0.8rem; font-weight:300; color:rgba(250,247,244,0.4); letter-spacing:0.02em; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+    .crystals-section { grid-template-columns:1fr; max-width:420px; }
+    .constellations-grid { grid-template-columns:repeat(2,1fr); }
+    .projects-grid { grid-template-columns:repeat(2,1fr); }
+    .repos-grid { grid-template-columns:repeat(2,1fr); }
+    .ct-grid { grid-template-columns:1fr; }
+    .ct-commit { grid-template-columns:48px 1fr auto; }
+}
+@media (max-width: 600px) {
+    .page-hero,.crystals-section,.github-section,.projects-section,.constellations-section,.certs-section { padding-left:24px;padding-right:24px; }
+    .page-hero { padding-top:calc(72px + 40px);padding-bottom:32px; }
+    .crystals-section { padding-bottom:56px; }
+    .constellations-grid { grid-template-columns:repeat(2,1fr);gap:16px; }
+    .projects-grid { grid-template-columns:1fr; }
+    .repos-grid { grid-template-columns:1fr; }
+    .proj-thumb { aspect-ratio:4/3; }
+}

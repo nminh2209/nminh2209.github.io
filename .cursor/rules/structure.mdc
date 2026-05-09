@@ -1,0 +1,53 @@
+---
+description: Project structure
+alwaysApply: true
+---
+
+## Key Folders and Files
+
+This document provides a high-level overview of the mindx-atlas project structure for first-time readers.
+
+### Project Structure
+
+**mindx-atlas** is a unified repository designed as a navigation and AI context hub for API layers, services, apps, MCP endpoints, and agents. It follows a structured approach with an incubator area for new projects and graduated areas for mature components.
+
+### Root Level
+
+Currently, the project is in its initial setup phase with minimal structure:
+
+- `.github/` - GitHub configuration and workflows
+- `docs/ - Documentation and planning materials
+- `tools/` - Top level tools, used to orchestrate and setup sub-modules
+
+### Key Directories
+
+#### `.github/workflows/`
+Contains GitHub Actions workflows, including Claude AI integration
+
+#### `docs/`
+Documentation hub with organized subdirectories:
+- **`docs/plans/`** - Contains project roadmaps and planning documents
+- **`docs/notes/`** Contain notes after updates
+- **`docs/investigations/`** Contain issues and bugs investigations
+- **`docs/guides/`** Contain user and AI guide
+
+### `tools/`
+Top-level tools, used to orchestrate and setup sub-modules
+
+### `apis/`
+API Layer, usually expose and server GraphQL or Rest API for app or consumer
+
+## `services/`
+Micro-services, usually unexposed, business-domain-specfic services for API layer to call. Micro-services do not directly call each other
+
+## `mcps/`
+Thin MCP (Model Context Protocol) services, helping AI model interact with the system 
+
+## `agents/`
+AI agents, background or on-request
+
+### Important Files
+- package.json
+
+## Rules
+- Keep the build and scripts at top-level lightweight and simple

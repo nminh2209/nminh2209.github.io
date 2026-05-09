@@ -1,0 +1,24 @@
+---
+description: Docs rule
+alwaysApply: true
+---
+
+## Documentation Organization
+- All docs in `docs/` subfolders use date-based organization: `docs/<subfolder>/YYYY-MM-DD/`
+- Use ISO date format: `2025-08-25`
+- File names: concise, no dates (date in folder path)
+- Save detailed plans to `docs/plans/YYYY-MM-DD/`
+- Save research and brainstorming discussions to `docs/brainstorm/YYYY-MM-DD/`
+- Add docs cleanup task when session ends
+
+## Document purposes
+- Plan files go into `docs/plans/...``
+- Guide files go into `docs/guides/...``
+- Issues and Bugs invesgitations go into `docs/investigations/...``
+- Progresses, updates go into `docs/notes/...``
+- Tasks for features or updates go into `tasks/...``
+- Bugs go into `bugs/...``
+
+## Templates
+- When creating new task, copy precisely from `tasks/task.template.md` then make edits
+- When creating new bug, copy precisely from `bugs/bug.template.md` then make edits

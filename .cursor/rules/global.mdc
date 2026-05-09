@@ -1,0 +1,10 @@
+---
+description: Cursor global rules
+alwaysApply: true
+---
+
+## Tools
+- Read and write files using tools in this priorities
+  + file_system tool/mcp
+  + grep, glob linux commands
+  + cursor tools

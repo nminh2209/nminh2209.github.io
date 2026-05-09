@@ -1,0 +1,31 @@
+---
+description: project commands
+glob: 
+alwaysApply: true
+---
+
+## Commands
+- Use `github` mcp/tool for checking github issues and PRs
+- Use ado mcp/tool for checking azure devops build and release
+- Use `desktop-commander` for file operations: read, write, edit, search files, search within file
+- Use `filesystem` when `desktop-commander` fails
+- Only when both `desktop-commander` and `filesystem` fail, use other methods
+- Use `git` mcp/tool for local git operattion
+- If `git` mcp/tool fails for missing working dir, run `git_set_working_dir`
+- Use `ddg-search` for search/web-search
+- Use `fetch` to fetch, get remote url
+- Use `sequential-thinking` when brainstorming, planning or complex discussions
+
+## Filesystem tool/mcp
+- **DO NOT** use filesystem directory_tree to scan the whole folder, the content will be too much to process, use `list_directory` instead
+- **Exclude** node_modules from filesystem search, unless that's the intention
+
+## Wait or Sleep
+- **DO NOT** use desktop commander to wait or sleep
+- Use direct shell `sleep` to wait or sleep
+
+## TS
+- Prioritize `pnpm` over `npm` or `yarn`
+
+## Notes
+- MCP means Model Context Protocol

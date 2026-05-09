@@ -2,118 +2,459 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="assets/fontawesome/css/solid.css" rel="stylesheet">
-    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet">
-    <title>About</title>
-    <link href="css/about-design.css" media="screen" rel="stylesheet" type="text/css"/>
-    <script src="script/about.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Nguyen Hoang Minh — Software Engineer & Pianist</title>
+    <meta name="description" content="Nguyen Hoang Minh — Software Engineering student at Swinburne University. Full-stack developer, pianist.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
 </head>
-<body>
+<body class="dark-theme">
 
-<section class="navigation-bar">
-    <nav class="navbar">
-        <div class="brand-div">
-            <p class="brand-name"><a href="index.html">PsychHealth</a></p>
-        </div>
-        <div class="nav-options">
-            <ul class="nav-links">
-                <li><a href="index.html">Trang Chủ</a></li>
-                <li><a href="about.html">Giới Thiệu</a></li>
-                <li><a href="test.html">Kiểm Tra</a></li>
-                <li><a href="FAQ.html">FAQ</a></li>
-            </ul>
-        </div>
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div class="bg-washes" aria-hidden="true">
+        <div class="wash wash-pink"></div>
+        <div class="wash wash-purple"></div>
+        <div class="wash wash-blue"></div>
+    </div>
+
+    <!-- Floating feather + lily -->
+    <div class="float-feather" aria-hidden="true">
+        <svg viewBox="0 0 24 60" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 58 C12 58 2 42 2 24 C2 12 8 4 12 2 C16 4 22 12 22 24 C22 42 12 58 12 58Z"
+                  fill="none" stroke="#7ab8e8" stroke-width="0.8" opacity="0.55"/>
+            <line x1="12" y1="2" x2="12" y2="58" stroke="#7ab8e8" stroke-width="0.5" opacity="0.3"/>
+        </svg>
+    </div>
+    <div class="float-lily" aria-hidden="true">
+        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="30" cy="40" rx="8" ry="4" fill="#f0c96a" opacity="0.7"/>
+            <ellipse cx="30" cy="30" rx="6" ry="18" fill="#f5e6a0" opacity="0.5" transform="rotate(0 30 30)"/>
+            <ellipse cx="30" cy="30" rx="6" ry="18" fill="#f5e6a0" opacity="0.45" transform="rotate(60 30 30)"/>
+            <ellipse cx="30" cy="30" rx="6" ry="18" fill="#f5e6a0" opacity="0.4"  transform="rotate(120 30 30)"/>
+            <circle cx="30" cy="30" r="5" fill="#f0c96a" opacity="0.9"/>
+        </svg>
+    </div>
+
+    <nav class="site-nav">
+        <div class="nav-brand"><span class="nav-brand-m">M</span><span class="nav-brand-dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="piano.html">Piano</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="https://www.linkedin.com/in/nguyen-minh-759149223/" target="_blank" rel="noopener" class="nav-linkedin" aria-label="LinkedIn Profile">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+        </a>
+        <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.site-nav').classList.toggle('nav-open')">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
-</section>
 
-<section class="introduction">
-    <div class="introduction-container">
-        <div class="introduction-text-container">
-            <div class="introduction-text-wrapper">
-                <h1 id="introduction-title">Câu Chuyện Của Chúng Tôi</h1>
-                <p class="introduction-text">
-                    Hành trình của trang web chúng tôi bắt đầu với một tầm nhìn chung và niềm đam mê tạo ra tác động tích cực. 
-                    Thông qua các buổi brainstorming hợp tác, lên kế hoạch kỹ lưỡng, và phát triển sáng tạo, chúng tôi đã hiện thực hóa ý tưởng của mình. 
-                    Những thách thức trở thành cơ hội học hỏi, và tinh thần làm việc nhóm đảm bảo chức năng mượt mà của trang web. 
-                    Việc thử nghiệm kỹ lưỡng và triển khai cẩn thận đánh dấu các bước cuối cùng, và giờ đây trang web của chúng tôi là một minh chứng cho sự tận tụy trong việc tạo ra điều có ý nghĩa. 
-                    Đây không chỉ là một trang web; đó là câu chuyện về sự hợp tác, sáng tạo, và vượt qua thử thách để tạo nên tác động tích cực.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+    <main>
 
-<section class="team">
-    <div class="team-container">
-        <div class="team-introduction">
-            <h1 id="team-introduction">ĐỘI NGŨ</h1>
-            <p class="team-description">Những người đã đóng góp để tạo nên dự án này</p>
+        <!-- Page hero -->
+        <section class="about-hero">
+            <p class="about-eyebrow">The Story So Far</p>
+            <h1 class="about-title">About<br><em>Me</em></h1>
+        </section>
+
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+            </svg>
         </div>
-        <div class="team-members-container">
-            <div class="team-row1">
-                <div class="team-item">
-                    <div class="container">
-                        <img alt="Avatar" class="image" src="">
-                        <div class="overlay">
-                            <a class="icon" onclick="openModal('Nguyễn Trung Nghĩa', 'Tôi là Nguyễn Trung Nghĩa, 20 tuổi, theo học Cử nhân Công nghệ Thông tin với phương châm: Trong niềm tin, tôi tìm thấy sức mạnh; qua những thử thách và chiến thắng, niềm tin kiên định của tôi dẫn lối.', 'res/team-pics/allysa-casual-1.jpg')"
-                               title="Hồ Sơ Người Dùng">
-                                <i class="fa-solid fa-user"></i>
-                            </a>
+
+        <!-- Story / Bio section -->
+        <section class="about-story">
+            <div class="story-grid">
+                <div class="story-profile">
+                    <div class="profile-photo">
+                        <img src="images/anhminh.png" alt="Hoang Minh" onerror="this.style.display='none'">
+                        <!-- Piano keys strip -->
+                        <div class="piano-strip" aria-hidden="true">
+                            <div class="piano-key white"></div><div class="piano-key black"></div>
+                            <div class="piano-key white"></div><div class="piano-key black"></div>
+                            <div class="piano-key white"></div><div class="piano-key white"></div>
+                            <div class="piano-key black"></div><div class="piano-key white"></div>
+                            <div class="piano-key black"></div><div class="piano-key white"></div>
+                            <div class="piano-key black"></div><div class="piano-key white"></div>
+                            <div class="piano-key white"></div><div class="piano-key black"></div>
+                            <div class="piano-key white"></div>
+                            <div class="piano-key black"></div><div class="piano-key white"></div>
                         </div>
                     </div>
-                    <h1>Nguyễn Trung Nghĩa</h1>
-                    <p>"Âm thầm, lặng lẽ, nhưng mạnh mẽ cùng nhau"</p>
+                    <div class="profile-meta">
+                        <h2 class="profile-name">Nguyen Hoang Minh</h2>
+                        <p class="profile-role">Software Engineer &nbsp;&middot;&nbsp; Pianist &nbsp;&middot;&nbsp; Hanoi, Vietnam</p>
+                        <div class="profile-links">
+                            <a href="https://www.linkedin.com/in/nguyen-minh-759149223/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/nminh2209" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                        <a href="contact.html" class="profile-cta">Get in Touch &rarr;</a>
+                    </div>
                 </div>
+                <div class="story-text">
+                    <p>I'm <strong>Nguyen Hoang Minh</strong> &mdash; a Software Engineering student at <strong>Swinburne University of Technology</strong> (graduating 2026) with a passion for building real-world, production-ready software. My journey is built on two pillars: code that works at scale, and music that moves people.</p>
+                    <p>Over the past year I've worked across the full stack: from backend APIs with <strong>FastAPI and Django</strong>, to polished React frontends with <strong>TypeScript and Vite</strong>, to real-time systems on <strong>Firebase</strong>. I've maintained a live production CRM platform handling <strong>10,000+ daily events</strong>, instrumented <strong>Azure Application Insights</strong> across three vendors, and fixed critical async patterns with exponential backoff retry achieving <strong>99.9% success rates</strong>.</p>
+                    <p>Beyond software, I'm a classically trained pianist &mdash; self-taught over many years &mdash; and a lifelong Final Fantasy fan. Music taught me something that code reinforced: that mastery is not about knowing everything, but about caring enough to get the details right. The same discipline that makes a Chopin étude clean makes a production deployment reliable.</p>
+                    <p>I'm <strong>open to opportunities</strong> in full-stack development, DevOps, and AI-driven projects. If you're building something that matters, I'd love to talk.</p>
+                </div>
+            </div>
+        </section>
 
-                <!-- Similar updates for other team members -->
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+            </svg>
+        </div>
 
-                <div class="team-item">
-                    <div class="container">
-                        <img alt="Avatar" class="image" src="">
-                        <div class="overlay">
-                            <a class="icon" onclick="openModal('Nguyễn Trung Nghĩa', 'Nguyễn Trung Nghĩa, sinh viên Cử nhân Công nghệ Thông tin. Chúng ta phải chịu trách nhiệm về hành động của mình, nhưng cũng nên biết rằng nếu chọn một hướng đi khác, sẽ có kết quả khác. Tóm lại, điều gì cũng có ý nghĩa riêng.', 'res/team-pics/ricky-casual.jpeg')"
-                               title="Hồ Sơ Người Dùng">
-                                <i class="fa fa-user"></i>
-                            </a>
+        <!-- Experience Timeline -->
+        <section class="experience-section">
+            <span class="section-eyebrow">Career</span>
+            <h2 class="section-heading">Experience</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="td-year">Apr 2026</span>
+                        <span class="td-now">Present</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="tc-header">
+                            <h3 class="tc-title">Full Stack Engineer</h3>
+                            <span class="tc-company">BlueOC</span>
+                        </div>
+                        <p class="tc-desc">Building and maintaining full-stack web applications. Working across the entire stack — from system architecture and backend logic to polished React frontends and deployment pipelines. Actively contributing to production systems and client-facing features.</p>
+                        <div class="tc-tags">
+                            <span>React</span><span>FastAPI</span><span>TypeScript</span><span>PostgreSQL</span><span>Git</span><span>CI/CD</span>
                         </div>
                     </div>
-                    <h1>Nguyễn Trung Nghĩa</h1>
-                    <p>"Hãy làm điều cần làm"</p>
                 </div>
 
-                <!-- Additional team members follow the same pattern -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="td-year">Nov 2025</span>
+                        <span class="td-year">Jan 2026</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="tc-header">
+                            <h3 class="tc-title">Fresher Software Engineer</h3>
+                            <span class="tc-company">MindX Technology School</span>
+                        </div>
+                        <p class="tc-desc">Maintained a live CRM platform with Stringee VoIP integration for real-time call handling. Instrumented Azure Application Insights to capture 10K+ daily events across 3 vendors (Stringee, Bizfly, OmiCall), reducing debugging time by <strong>60%</strong>. Fixed critical production issues including lead sync failures and async patterns with exponential backoff retry achieving <strong>99.9% success rate</strong>.</p>
+                        <div class="tc-tags">
+                            <span>Azure</span><span>Application Insights</span><span>Stringee API</span><span>CRM</span><span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="td-year">Mar 2025</span>
+                        <span class="td-year">Dec 2025</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="tc-header">
+                            <h3 class="tc-title">Web Development Intern</h3>
+                            <span class="tc-company">Swinburne University of Technology</span>
+                        </div>
+                        <p class="tc-desc">Contributed to university web platform development, collaborating on frontend features and backend API integrations using JavaScript, project management tools, and modern web frameworks.</p>
+                        <div class="tc-tags">
+                            <span>JavaScript</span><span>Frontend</span><span>API</span><span>Git</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- The Modal -->
-<div class="modal" id="myModal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img alt="" class="modal-picture" id="modal-picture" src="">
-        <div class="modal-container">
-            <div class="modal-text-content">
-                <div class="modal-title">
-                    <h1 id="modal-title"></h1>
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+            </svg>
+        </div>
+
+        <!-- Projects -->
+        <section class="projects-highlight-section">
+            <span class="section-eyebrow">Work</span>
+            <h2 class="section-heading">Key Projects</h2>
+            <div class="projects-highlight-grid">
+
+                <div class="ph-card">
+                    <div class="ph-card-header">
+                        <span class="ph-cat">Full-Stack &middot; Production</span>
+                        <h3 class="ph-title">Bakery Management System</h3>
+                    </div>
+                    <p class="ph-period">Jun 2025 &ndash; Present &middot; Live Production</p>
+                    <p class="ph-desc">A full-stack bakery ERP platform serving 3 physical stores, with 12+ modules including automated product code generation, multi-ingredient purchase orders with pricing analytics, real-time inventory tracking, and a fully localized responsive UI.</p>
+                    <div class="ph-tags">
+                        <span>React 19</span><span>TypeScript</span><span>Firebase</span><span>Ant Design</span><span>Real-time</span>
+                    </div>
+                    <div class="ph-outcomes">
+                        <div class="ph-outcome">
+                            <span class="ph-outcome-num">3</span>
+                            <span class="ph-outcome-label">Stores in production</span>
+                        </div>
+                        <div class="ph-outcome">
+                            <span class="ph-outcome-num">12+</span>
+                            <span class="ph-outcome-label">Modules deployed</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-description">
-                    <p id="modal-description"></p>
+
+                <div class="ph-card">
+                    <div class="ph-card-header">
+                        <span class="ph-cat">Backend Lead &middot; Capstone</span>
+                        <h3 class="ph-title">HMU Medical Student Documentation Platform</h3>
+                    </div>
+                    <p class="ph-period">2025 &middot; Django &middot; PostgreSQL &middot; Vue3</p>
+                    <p class="ph-desc">Built and extended a clinical-case documentation system as backend lead. Designed detailed medical models, fixed CORS and serializer issues, and integrated the Vue3 frontend for full case display and management.</p>
+                    <div class="ph-tags">
+                        <span>Django</span><span>PostgreSQL</span><span>Vue3</span><span>REST API</span><span>CORS</span>
+                    </div>
                 </div>
+
+                <div class="ph-card">
+                    <div class="ph-card-header">
+                        <span class="ph-cat">Production &middot; CRM</span>
+                        <h3 class="ph-title">MindX CRM Platform</h3>
+                    </div>
+                    <p class="ph-period">Nov 2025 &ndash; Jan 2026 &middot; MindX Technology School</p>
+                    <p class="ph-desc">Maintained live CRM with real-time call integration via Stringee VoIP API. Instrumented Azure Application Insights across 3 vendors, reduced debugging time by 60%, fixed async lead sync with exponential backoff achieving 99.9% success rate.</p>
+                    <div class="ph-tags">
+                        <span>Python</span><span>Azure</span><span>Stringee API</span><span>Application Insights</span><span>Async Patterns</span>
+                    </div>
+                    <div class="ph-outcomes">
+                        <div class="ph-outcome">
+                            <span class="ph-outcome-num">10K+</span>
+                            <span class="ph-outcome-label">Daily events tracked</span>
+                        </div>
+                        <div class="ph-outcome">
+                            <span class="ph-outcome-num">99.9%</span>
+                            <span class="ph-outcome-label">Async success rate</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </div>
-</div>
-<section class="footer">
-    <div class="footer-container">
-        <p>Bản quyền thuộc về PsychHealth 2025</p>
-    </div>
-</section>
-<script src="/script/about.js"></script>
+        </section>
 
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+            </svg>
+        </div>
+
+        <!-- Skills -->
+        <section class="skills-section">
+            <span class="section-eyebrow">Craft</span>
+            <h2 class="section-heading">Skills &amp; Technologies</h2>
+            <div class="skills-grid">
+
+                <div class="skill-group">
+                    <h3 class="sg-title">Frontend</h3>
+                    <div class="sg-chips">
+                        <span class="chip">React</span>
+                        <span class="chip">TypeScript</span>
+                        <span class="chip">Vite</span>
+                        <span class="chip">Ant Design</span>
+                        <span class="chip">Vue 3</span>
+                        <span class="chip">HTML/CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="sg-title">Backend</h3>
+                    <div class="sg-chips">
+                        <span class="chip">Python</span>
+                        <span class="chip">FastAPI</span>
+                        <span class="chip">Django</span>
+                        <span class="chip">Flask</span>
+                        <span class="chip">REST API</span>
+                        <span class="chip">Kotlin</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="sg-title">Data &amp; Cloud</h3>
+                    <div class="sg-chips">
+                        <span class="chip">Firebase</span>
+                        <span class="chip">PostgreSQL</span>
+                        <span class="chip">SQLite</span>
+                        <span class="chip">Azure</span>
+                        <span class="chip">AWS</span>
+                        <span class="chip">Application Insights</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="sg-title">Tools &amp; Practices</h3>
+                    <div class="sg-chips">
+                        <span class="chip">Git</span>
+                        <span class="chip">Debugging</span>
+                        <span class="chip">API Design</span>
+                        <span class="chip">Database Modeling</span>
+                        <span class="chip">Performance Optimization</span>
+                        <span class="chip">Requirement Analysis</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="sg-title">Certifications</h3>
+                    <div class="sg-chips">
+                        <span class="chip cert">Harvard CS50x 2025</span>
+                        <span class="chip cert">AWS Cloud Foundations</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="sg-title">Languages</h3>
+                    <div class="sg-chips">
+                        <span class="chip">Vietnamese &mdash; Native</span>
+                        <span class="chip">English &mdash; Professional</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+            </svg>
+        </div>
+
+        <!-- Education -->
+        <section class="education-section">
+            <span class="section-eyebrow">Learning</span>
+            <h2 class="section-heading">Education</h2>
+            <div class="edu-grid">
+
+                <div class="edu-card">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-content">
+                        <h3>Swinburne University of Technology</h3>
+                        <p class="edu-degree">Bachelor of Computer and Information Sciences</p>
+                        <p class="edu-period">Aug 2023 &ndash; Aug 2026 &middot; Hanoi, Vietnam</p>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon"><i class="fas fa-music"></i></div>
+                    <div class="edu-content">
+                        <h3>Music &mdash; Self-Taught Pianist</h3>
+                        <p class="edu-degree">Intermediate to Advanced &mdash; Classical &amp; Contemporary</p>
+                        <p class="edu-period">Self-taught &middot; 2016&ndash;Present</p>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="edu-content">
+                        <h3>Certifications</h3>
+                        <p class="edu-degree">Harvard CS50x 2025 &mdash; Introduction to Computer Science</p>
+                        <p class="edu-degree">AWS Academy Graduate &mdash; Cloud Foundations</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ornament -->
+        <div class="ornament" aria-hidden="true">
+            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
+            </svg>
+        </div>
+
+        <!-- Personal section -->
+        <section class="personal-section">
+            <span class="section-eyebrow">Beyond Code</span>
+            <h2 class="section-heading">Things I Care About</h2>
+            <div class="personal-grid">
+
+                <div class="personal-card">
+                    <span class="personal-icon"><i class="fas fa-music"></i></span>
+                    <h3>Piano &amp; Music</h3>
+                    <p>Self-taught pianist. Classical training meets Final Fantasy &mdash; from Chopin to Uematsu. Music taught me the discipline that code demands.</p>
+                </div>
+
+                <div class="personal-card">
+                    <span class="personal-icon"><i class="fas fa-cat"></i></span>
+                    <h3>Smoke &amp; Broomstick</h3>
+                    <p>Dedicated cat parent to two beloved feline companions. Nothing resets a tough debugging session like a purring cat on your keyboard.</p>
+                </div>
+
+                <div class="personal-card">
+                    <span class="personal-icon"><i class="fas fa-gamepad"></i></span>
+                    <h3>Final Fantasy &amp; Storytelling</h3>
+                    <p>Passionate about JRPGs, anime, and narrative design. Nobuo Uematsu's music is as formative to me as any textbook. Great stories &mdash; in games, in code, in music &mdash; share the same soul.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="page-cta">
+            <h2>Open to Opportunities</h2>
+            <p>Full-stack development, DevOps, AI-driven projects. I'm always interested in work that challenges me to grow.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">Get in Touch</a>
+                <a href="portfolio.html" class="btn-secondary">View My Work</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-logo"><span>M</span>.</span>
+            <p class="footer-tagline">Nguyen Hoang Minh &mdash; Hanoi, Vietnam</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="piano.html">Piano</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/nguyen-minh-759149223/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/nminh2209" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="footer-bottom">&copy; 2026 Nguyen Hoang Minh. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+    <script src="about.js"></script>
 </body>
-
 </html>

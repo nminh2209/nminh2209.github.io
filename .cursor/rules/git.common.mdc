@@ -1,0 +1,32 @@
+---
+description: Git instructions
+alwaysApply: true
+---
+
+## Merge changes to master
+- When being asked to merge to master, it means following through from local commit till the Pull request complete
+- Never leave a PR without reading and address the PR reviews
+- PR reviews are ready when Mergeable: true, and Mergeable State: clean
+- Create todo list to cover the following steps:
+	1. Bump version, clean, run checks (lint, format, type, test)
+	2. Check out to new branch, commit then push the changes
+	3. Create PR to master
+	4. Wait at least 60 seconds, then check PR status and comments, if the PR checks are still running, wait for another 60 seconds and then check again
+	5. If the PR checks are with critical issues to address (PR comments or CI build errors), then address them, push the change again, then wait 60 seconds then check again
+	6. When PR are all checked, critical reviews and errors are addressed, merge it
+	7. Check out to master, pull and stop
+
+## Comit the rules and docs
+- When add or commit, include `.cursor/rules/* `docs/**/*` `tasks/**/*` and `bugs/**/*` files, they are part of the features
+
+## Commit messages
+Do not write long commit description, keep them under 10 lines
+**IMPORTANT** Do not use git reset
+
+## Sub-modules
+DO NOT commit, stage or add sub-modules, leave them there
+
+## Tools
+- Use 'github' mcp/tool to create PR, check PR status and PR reviews, instead of 'gh' (gh is not logged in)
+- Use 'git' mcp/tool to operate git, instead of git terminal command
+- Use direct shell `sleep` to wait or sleep
