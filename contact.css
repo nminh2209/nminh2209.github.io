@@ -3,7 +3,15 @@
    ============================================ */
 
 /* Page hero */
-.page-hero { position:relative; z-index:3; padding:calc(72px + 60px) 60px 40px; animation:fadeUp 0.7s ease both; }
+.page-hero {
+    position:relative; z-index:3;
+    padding:calc(72px + 60px) 60px 40px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    animation:fadeUp 0.7s ease both;
+}
 .page-eyebrow { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.7rem; font-weight:300; letter-spacing:0.25em; text-transform:uppercase; color:#c9a84c; margin-bottom:18px; }
 .page-title { font-family:'Playfair Display',Georgia,serif; font-size:clamp(3rem,7vw,5.5rem); font-weight:400; font-style:italic; line-height:1.05; letter-spacing:-0.02em; color:#faf7f4; }
 .page-title em { color:#e8c96a; }

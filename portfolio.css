@@ -16,6 +16,10 @@
 .page-hero {
     position: relative; z-index: 3;
     padding: calc(72px + 60px) 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     animation: fadeUp 0.8s ease both;
 }
 .page-eyebrow {
@@ -33,6 +37,7 @@
 .page-subtitle {
     font-size: 0.8rem; font-weight: 300; color: rgba(250,247,244,0.45);
     margin-top: 16px; letter-spacing: 0.12em; text-transform: uppercase;
+    max-width: 900px;
 }
 
 /* ============================================
@@ -176,6 +181,19 @@
 .scroll-theme { font-family:'Playfair Display',Georgia,serif; font-size:0.9rem; font-weight:400; font-style:italic; color:#b8860b; margin-bottom:10px; }
 .scroll-details { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.88rem; font-weight:300; color:rgba(250,247,244,0.5); line-height:1.6; margin-bottom:8px; }
 .scroll-desc { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.9rem; font-weight:300; color:rgba(250,247,244,0.6); line-height:1.7; margin-bottom:12px; }
+.impact-list {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 6px;
+}
+.impact-list li {
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:0.84rem;
+    font-weight:300;
+    color:rgba(250,247,244,0.62);
+    line-height:1.5;
+}
 
 /* ============================================
    SKILLS AS CONSTELLATIONS

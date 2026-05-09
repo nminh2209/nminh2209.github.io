@@ -109,6 +109,27 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
+.skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    transform: translateY(-150%);
+    z-index: 12000;
+    padding: 10px 14px;
+    background: var(--gold-warm);
+    color: #fff;
+    border-radius: 3px;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
 main {
     position: relative;
     z-index: 2;
@@ -118,6 +139,12 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { display: block; max-width: 100%; }
 button { font-family: inherit; cursor: pointer; }
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
+}
 
 /* ============================================
    GRAIN OVERLAY

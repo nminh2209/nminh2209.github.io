@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body class="dark-theme">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Grain overlay -->
     <div class="grain" aria-hidden="true"></div>
@@ -29,13 +30,13 @@
     </div>
 
     <!-- Corner character silhouettes (subtle, decorative) -->
-    <img src="images/cloud.jpg" alt="" class="corner-char corner-cloud" aria-hidden="true" onerror="this.style.display='none'">
-    <img src="images/aerith.jpg" alt="" class="corner-char corner-aerith" aria-hidden="true" onerror="this.style.display='none'">
+    <img src="images/cloud.jpg" alt="" class="corner-char corner-cloud" aria-hidden="true" loading="lazy" decoding="async" onerror="this.style.display='none'">
+    <img src="images/aerith.jpg" alt="" class="corner-char corner-aerith" aria-hidden="true" loading="lazy" decoding="async" onerror="this.style.display='none'">
 
     <!-- Navigation -->
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Main navigation">
         <div class="nav-brand"><span class="nav-brand-m">M</span><span class="nav-brand-dot">.</span></div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="main-nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
@@ -48,17 +49,23 @@
             </svg>
             LinkedIn
         </a>
-        <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.site-nav').classList.toggle('nav-open')">
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav-links" onclick="document.querySelector('.site-nav').classList.toggle('nav-open')">
             <span></span><span></span><span></span>
         </button>
     </nav>
 
+    <main id="main-content">
     <!-- Hero: THE SCORE -->
     <section class="hero-score">
         <div class="hero-title-wrap">
             <p class="hero-subtitle">SOFTWARE ENGINEER &nbsp;&middot;&nbsp; PIANIST &nbsp;&middot;&nbsp; HANOI</p>
             <h1 class="hero-title-score">Nguyen<br><em>Minh</em></h1>
             <p class="hero-tagline">Full-Stack Developer &nbsp;&middot;&nbsp; React &middot; FastAPI &nbsp;&middot;&nbsp; Building with heart</p>
+            <p class="hero-value">I build reliable full-stack products with measurable business impact and clean user experience.</p>
+            <div class="hero-cta">
+                <a href="portfolio.html" class="btn-primary">View Projects</a>
+                <a href="contact.html" class="btn-secondary">Hire Me</a>
+            </div>
         </div>
         <!-- Open to work badge -->
         <div class="open-to-work-badge" aria-label="Open to work: Full-stack, DevOps, AI projects">
@@ -83,8 +90,8 @@
         <!-- Card 1: Software Engineering -->
         <article class="score-card">
             <div class="card-image-wrap">
-                <img src="images/ac1.jpg" alt="Software Engineering" class="card-image" onerror="this.style.display='none'">
-                <img src="images/anhminh.png" alt="Software" class="card-portrait" onerror="this.style.display='none'">
+                <img src="images/ac1.jpg" alt="Software Engineering" class="card-image" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <img src="images/anhminh.png" alt="Software" class="card-portrait" loading="lazy" decoding="async" onerror="this.style.display='none'">
                 <div class="card-overlay"></div>
                 <div class="card-halo" aria-hidden="true"></div>
             </div>
@@ -100,8 +107,8 @@
         <!-- Card 2: Music / Piano -->
         <article class="score-card">
             <div class="card-image-wrap">
-                <img src="images/anhnhac.jpg" alt="Piano" class="card-image" onerror="this.style.display='none'">
-                <img src="images/anhkaori.png" alt="Piano" class="card-portrait" onerror="this.style.display='none'">
+                <img src="images/anhnhac.jpg" alt="Piano" class="card-image" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <img src="images/anhkaori.png" alt="Piano" class="card-portrait" loading="lazy" decoding="async" onerror="this.style.display='none'">
                 <div class="card-overlay"></div>
                 <div class="card-halo" aria-hidden="true"></div>
             </div>
@@ -117,8 +124,8 @@
         <!-- Card 3: About / Story -->
         <article class="score-card">
             <div class="card-image-wrap">
-                <img src="images/anhphim1.jpg" alt="About" class="card-image" onerror="this.style.display='none'">
-                <img src="images/anhgamef.jpg" alt="About" class="card-portrait" onerror="this.style.display='none'">
+                <img src="images/anhphim1.jpg" alt="About" class="card-image" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <img src="images/anhgamef.jpg" alt="About" class="card-portrait" loading="lazy" decoding="async" onerror="this.style.display='none'">
                 <div class="card-overlay"></div>
                 <div class="card-halo" aria-hidden="true"></div>
             </div>
@@ -160,6 +167,7 @@
             <span class="stat-label">Cloud Foundations</span>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer">

@@ -47,6 +47,10 @@ body { background: #09080f; }
 .about-hero {
     position: relative; z-index: 3;
     padding: calc(72px + 60px) 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     animation: fadeUp 0.8s ease both;
 }
 .about-eyebrow {

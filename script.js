@@ -70,6 +70,23 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 80);
         }, { passive: true });
+
+        const navToggle = nav.querySelector('.nav-hamburger');
+        const navLinks = nav.querySelectorAll('.nav-links a');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = nav.classList.contains('nav-open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-open');
+                if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
     }
 
     // ── Smooth anchor links ──────────────────────────────────
