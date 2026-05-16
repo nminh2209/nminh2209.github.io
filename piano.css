@@ -223,6 +223,11 @@
     border: 0;
 }
 
+.sc-embed--soundcloud {
+    aspect-ratio: auto;
+    height: 166px;
+}
+
 /* ============================================
    PIANO GALLERY
    ============================================ */

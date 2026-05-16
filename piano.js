@@ -4,6 +4,17 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // YouTube Error 153: player needs Referer + origin (see developers.google.com/youtube/terms)
+    if (window.location.protocol.startsWith('http')) {
+        document.querySelectorAll('.sc-embed iframe[src*="youtube.com/embed"]').forEach((iframe) => {
+            const url = new URL(iframe.src, window.location.href);
+            if (!url.searchParams.has('origin')) {
+                url.searchParams.set('origin', window.location.origin);
+            }
+            iframe.src = url.toString();
+        });
+    }
+
     // ── Gallery items: scroll-triggered fade-in ─────────────────
     const pgItems = document.querySelectorAll('.pg-item');
     const galleryIO = new IntersectionObserver(entries => {
