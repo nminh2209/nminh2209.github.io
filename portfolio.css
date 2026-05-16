@@ -304,7 +304,7 @@ html:not(.dark-theme) #stars-canvas {
 .certs-section { position:relative; z-index:3; padding:56px 60px 72px; border-top:1px solid var(--surface-border); }
 .certs-eyebrow { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.68rem; font-weight:300; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); text-align:center; margin-bottom:16px; }
 .certs-heading { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,3.5vw,2.4rem); font-weight:400; font-style:italic; color:var(--ink); text-align:center; margin-bottom:48px; }
-.certs-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:900px; margin:0 auto; }
+.certs-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; max-width:1100px; margin:0 auto; }
 
 .cert-card {
     display:flex; gap:24px;
@@ -469,6 +469,7 @@ html.dark-theme .cert-logo-img {
 @media (max-width: 900px) {
     .crystals-section { grid-template-columns:1fr; max-width:420px; }
     .constellations-grid { grid-template-columns:repeat(2,1fr); }
+    .certs-grid { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:900px; }
     .projects-grid { grid-template-columns:repeat(2,1fr); }
     .repos-grid { grid-template-columns:repeat(2,1fr); }
     .ct-grid { grid-template-columns:1fr; }
@@ -479,6 +480,7 @@ html.dark-theme .cert-logo-img {
     .page-hero { padding-top:calc(72px + 40px);padding-bottom:32px; }
     .crystals-section { padding-bottom:56px; }
     .constellations-grid { grid-template-columns:repeat(2,1fr);gap:16px; }
+    .certs-grid { grid-template-columns:1fr; }
     .projects-grid { grid-template-columns:1fr; }
     .repos-grid { grid-template-columns:1fr; }
     .proj-thumb { aspect-ratio:4/3; }
