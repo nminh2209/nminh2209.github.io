@@ -254,49 +254,25 @@ html:not(.dark-theme) #stars-canvas {
 .project-note strong { color:var(--gold-light); font-weight:600; }
 
 /* ============================================
-   SKILLS AS CONSTELLATIONS
+   SKILLS — TAG GRID
    ============================================ */
-.constellations-section {
+.stack-section {
     position: relative; z-index: 3;
     padding: 64px 60px 72px;
     background: var(--band-bg);
     border-top: 1px solid var(--surface-border);
     border-bottom: 1px solid var(--surface-border);
 }
-.constellations-eyebrow { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.68rem; font-weight:300; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); text-align:center; margin-bottom:16px; }
-.constellations-heading { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,3.5vw,2.4rem); font-weight:400; font-style:italic; color:var(--ink); text-align:center; margin-bottom:48px; letter-spacing:-0.01em; }
-.constellations-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:1000px; margin:0 auto; }
-
-.constellation {
-    position: relative; aspect-ratio:1;
-    background: var(--surface-2); border:1px solid var(--surface-border); border-radius:50%; overflow:hidden; cursor:default; transition:border-color 0.3s;
-}
-.constellation:hover { border-color:rgba(201,168,76,0.4); }
-
-.constellation-stars { position:absolute; inset:0; }
-.star {
-    position:absolute; width:3px; height:3px; border-radius:50%; background:#e8d8a0;
-    box-shadow:0 0 6px 2px rgba(232,216,160,0.5); animation:star-twinkle 2s ease-in-out infinite;
-}
-.star:nth-child(1){animation-delay:0s;animation-duration:2.1s}
-.star:nth-child(2){animation-delay:0.3s;animation-duration:1.8s}
-.star:nth-child(3){animation-delay:0.6s;animation-duration:2.4s}
-.star:nth-child(4){animation-delay:0.9s;animation-duration:1.6s}
-.star:nth-child(5){animation-delay:1.2s;animation-duration:2.2s}
-.star:nth-child(6){animation-delay:0.4s;animation-duration:1.9s}
-.star:nth-child(7){animation-delay:1.5s;animation-duration:2.5s}
-@keyframes star-twinkle {
-    0%,100%{opacity:0.4;transform:scale(1)}
-    50%{opacity:1;transform:scale(1.4)}
-}
-
-.constellation-lines { position:absolute; inset:0; }
-.constellation-lines svg { width:100%; height:100%; }
-.constellation-lines line { stroke:rgba(201,168,76,0.25); stroke-width:0.5; }
-
-.constellation-info { position:absolute; bottom:0; left:0; right:0; text-align:center; padding:8px 8px 12px; background:linear-gradient(transparent, var(--paper-deep)); }
-.constellation-pct { display:block; font-family:'Playfair Display',Georgia,serif; font-size:1.1rem; font-weight:400; font-style:italic; color:var(--gold); line-height:1; margin-bottom:4px; }
-.constellation-name { display:block; font-family:'Cormorant Garamond',Georgia,serif; font-size:0.62rem; font-weight:300; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-light); }
+.stack-eyebrow { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.68rem; font-weight:300; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); text-align:center; margin-bottom:16px; }
+.stack-heading { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,3.5vw,2.4rem); font-weight:400; font-style:italic; color:var(--ink); text-align:center; margin-bottom:16px; letter-spacing:-0.01em; }
+.stack-note { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.95rem; font-weight:300; font-style:italic; color:var(--ink-light); text-align:center; max-width:520px; margin:0 auto 40px; line-height:1.6; }
+.stack-note a { color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.35); transition:border-color 0.2s; }
+.stack-note a:hover { border-color:var(--gold); }
+.stack-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:32px 48px; max-width:900px; margin:0 auto; }
+.stack-group-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.72rem; font-weight:400; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+.stack-chips { display:flex; gap:8px; flex-wrap:wrap; }
+.stack-chip { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.78rem; font-weight:300; color:var(--ink-light); padding:5px 12px; background:var(--surface-2); border:1px solid var(--surface-border); border-radius:100px; transition:background 0.2s,border-color 0.2s,color 0.2s; }
+.stack-chip:hover { background:var(--gold-muted); border-color:var(--surface-hover-border); color:var(--gold-warm); }
 
 /* ============================================
    CERTIFICATIONS SECTION
@@ -468,7 +444,7 @@ html.dark-theme .cert-logo-img {
    ============================================ */
 @media (max-width: 900px) {
     .crystals-section { grid-template-columns:1fr; max-width:420px; }
-    .constellations-grid { grid-template-columns:repeat(2,1fr); }
+    .stack-grid { grid-template-columns:1fr; }
     .certs-grid { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:900px; }
     .projects-grid { grid-template-columns:repeat(2,1fr); }
     .repos-grid { grid-template-columns:repeat(2,1fr); }
@@ -476,10 +452,10 @@ html.dark-theme .cert-logo-img {
     .ct-commit { grid-template-columns:48px 1fr auto; }
 }
 @media (max-width: 600px) {
-    .page-hero,.crystals-section,.github-section,.projects-section,.constellations-section,.certs-section,.page-cta { padding-left:24px;padding-right:24px; }
+    .page-hero,.crystals-section,.github-section,.projects-section,.stack-section,.certs-section,.page-cta { padding-left:24px;padding-right:24px; }
     .page-hero { padding-top:calc(72px + 40px);padding-bottom:32px; }
     .crystals-section { padding-bottom:56px; }
-    .constellations-grid { grid-template-columns:repeat(2,1fr);gap:16px; }
+    .stack-grid { gap:24px; }
     .certs-grid { grid-template-columns:1fr; }
     .projects-grid { grid-template-columns:1fr; }
     .repos-grid { grid-template-columns:1fr; }

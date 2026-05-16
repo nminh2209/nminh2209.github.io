@@ -1,6 +1,6 @@
 /* ============================================
    PORTFOLIO PAGE — Interactions
-   Stars canvas + crystal hover + constellation skills
+   Stars canvas + crystal hover
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -64,24 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.crystal-glow-ring').forEach((ring, i) => {
         ring.style.animationDelay = `${i * 1.3}s`;
     });
-
-    // ── Constellation skill rings: fill on scroll ──────────
-    const constellations = document.querySelectorAll('.constellation[data-skill]');
-    constellations.forEach(el => {
-        el.style.setProperty('--pct', '0');
-    });
-
-    const skillIO = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const skill = parseInt(entry.target.getAttribute('data-skill'), 10);
-                entry.target.style.setProperty('--pct', skill);
-                skillIO.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.4 });
-
-    constellations.forEach(el => skillIO.observe(el));
 
     // ── Projects stagger in ──────────────────────────────────
     const items = document.querySelectorAll('.proj-item');
