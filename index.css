@@ -1,5 +1,5 @@
 /* ============================================
-   HOME PAGE ó Polished cinematic landing
+   HOME PAGE ù Polished cinematic landing
    Uses shared tokens/components from style.css
    ============================================ */
 
@@ -48,7 +48,7 @@
     font-size: clamp(0.95rem, 2vw, 1.15rem);
     font-weight: 300;
     font-style: italic;
-    color: rgba(250, 247, 244, 0.56);
+    color: var(--ink-mid);
     opacity: 0;
     animation: fadeUp 1s 0.7s var(--ease-out) forwards;
 }
@@ -59,7 +59,7 @@
     font-family: var(--font-display);
     font-size: 0.9rem;
     line-height: 1.7;
-    color: rgba(250, 247, 244, 0.65);
+    color: var(--ink-light);
     opacity: 0;
     animation: fadeUp 1s 0.9s var(--ease-out) forwards;
 }
@@ -242,7 +242,7 @@
 
 .stat-item { flex: 1; text-align: center; padding: 0 20px; }
 .stat-num { display: block; font-family: var(--font-elegant); font-size: 1.8rem; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 6px; }
-.stat-label { display: block; font-family: var(--font-display); font-size: 0.65rem; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(250, 247, 244, 0.35); }
+.stat-label { display: block; font-family: var(--font-display); font-size: 0.65rem; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); }
 .stat-divider { width: 1px; height: 40px; background: rgba(201, 168, 76, 0.22); flex-shrink: 0; }
 
 @keyframes glow-pulse {
@@ -258,6 +258,77 @@
 @keyframes ow-pulse {
     0%, 100% { box-shadow: 0 0 6px #22c55e; }
     50%      { box-shadow: 0 0 14px #22c55e, 0 0 24px rgba(34, 197, 94, 0.3); }
+}
+
+/* Light theme ó calmer hero halo + parchment feature cards */
+html:not(.dark-theme) .hero-title-score {
+    text-shadow: 0 2px 18px rgba(65, 52, 32, 0.1), 0 1px 2px rgba(255, 255, 255, 0.28);
+    animation: fadeUp 1.2s 0.4s var(--ease-out) forwards;
+}
+
+html:not(.dark-theme) .open-to-work-badge {
+    background: var(--surface-1);
+    border: 1px solid var(--surface-border);
+    color: var(--ink-mid);
+    box-shadow: var(--card-shadow);
+}
+
+html:not(.dark-theme) .stats-strip {
+    border-top-color: var(--surface-border);
+    border-bottom-color: var(--surface-border);
+}
+
+html:not(.dark-theme) .stat-divider {
+    background: var(--surface-border);
+}
+
+html:not(.dark-theme) .score-card {
+    background: var(--surface-1);
+    border-color: var(--surface-border);
+    box-shadow: var(--card-shadow);
+}
+
+html:not(.dark-theme) .score-card:hover {
+    border-color: var(--surface-hover-border);
+    box-shadow: var(--card-hover-shadow);
+}
+
+html:not(.dark-theme) .card-image {
+    filter: saturate(0.92) brightness(0.96);
+}
+
+html:not(.dark-theme) .score-card:hover .card-image {
+    filter: saturate(1.02) brightness(1);
+}
+
+html:not(.dark-theme) .card-overlay {
+    background: linear-gradient(to bottom, transparent 32%, rgba(232, 226, 217, 0.28) 58%, rgba(218, 210, 200, 0.9) 100%);
+}
+
+html:not(.dark-theme) .card-heading {
+    color: var(--ink);
+}
+
+html:not(.dark-theme) .card-desc {
+    color: var(--ink-light);
+}
+
+html:not(.dark-theme) .card-theme {
+    color: var(--gold-warm);
+}
+
+html:not(.dark-theme) .card-btn {
+    border-color: var(--surface-hover-border);
+    color: var(--gold-warm);
+}
+
+html:not(.dark-theme) .card-btn:hover {
+    background: var(--gold-muted);
+    color: var(--ink);
+}
+
+html:not(.dark-theme) .card-portrait {
+    filter: drop-shadow(0 -6px 14px rgba(45, 40, 32, 0.18));
 }
 
 @media (max-width: 900px) {

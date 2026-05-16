@@ -64,6 +64,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ── Theme toggle ────────────────────────────────────────
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeKey = 'site-theme';
+
+    function syncThemeToggle() {
+        if (!themeToggle) return;
+        const isDark = document.documentElement.classList.contains('dark-theme');
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+        themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+
+    themeToggle?.addEventListener('click', () => {
+        const currentlyDark = document.documentElement.classList.contains('dark-theme');
+        document.documentElement.classList.toggle('dark-theme', !currentlyDark);
+        try {
+            localStorage.setItem(themeKey, currentlyDark ? 'light' : 'dark');
+        } catch (_e) { /* ignore */ }
+        syncThemeToggle();
+    });
+
+    syncThemeToggle();
+
     // ── Nav scroll: tighten on scroll ─────────────────────────
     const nav = document.querySelector('.site-nav');
     if (nav) {

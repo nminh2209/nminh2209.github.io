@@ -8,29 +8,29 @@
    ============================================ */
 :root {
     /* Ink / Text */
-    --ink:          #1c1917;
-    --ink-mid:      #44403c;
+    --ink:          #292524;
+    --ink-mid:      #57534e;
     --ink-light:    #78716c;
     --ink-faint:    #a8a29e;
 
-    /* Paper / Background */
-    --paper:        #faf7f4;
-    --paper-warm:   #f5f0eb;
-    --paper-deep:   #ede7e0;
+    /* Paper — slightly deeper parchment (less “white page” glare) */
+    --paper:        #e8e2d9;
+    --paper-warm:   #e2dcd2;
+    --paper-deep:   #d6cfc4;
     --paper-dark:   #09080f;
 
-    /* Gold accent */
-    --gold:         #c9a84c;
-    --gold-light:   #e8c96a;
-    --gold-pale:    #f5e6b8;
-    --gold-warm:    #b8860b;
-    --gold-muted:   rgba(201, 168, 76, 0.15);
+    /* Gold — softer brass in light mode (dark theme restores vivid gold below) */
+    --gold:         #9a7f3a;
+    --gold-light:   #b3934a;
+    --gold-pale:    #ccc1a0;
+    --gold-warm:    #7d6328;
+    --gold-muted:   rgba(120, 98, 48, 0.12);
 
     /* Background washes */
-    --blush:        rgba(230, 160, 160, 0.18);
-    --lavender:     rgba(180, 160, 220, 0.14);
-    --sky:          rgba(140, 190, 230, 0.12);
-    --gold-wash:    rgba(220, 190, 100, 0.1);
+    --blush:        rgba(200, 170, 160, 0.12);
+    --lavender:     rgba(170, 165, 190, 0.1);
+    --sky:          rgba(150, 175, 195, 0.1);
+    --gold-wash:    rgba(190, 175, 130, 0.08);
 
     /* Typography */
     --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -41,25 +41,29 @@
     --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
 
     /* Nav */
-    --nav-bg: rgba(250, 247, 244, 0.92);
-    --nav-border: rgba(201, 168, 76, 0.12);
+    --nav-bg: rgba(232, 226, 217, 0.94);
+    --nav-border: rgba(90, 78, 52, 0.14);
     --nav-text: #78716c;
 
     /* Surfaces */
-    --surface-1: rgba(250, 247, 244, 0.88);
-    --surface-2: rgba(250, 247, 244, 0.7);
-    --surface-border: rgba(201, 168, 76, 0.15);
-    --surface-hover-border: rgba(201, 168, 76, 0.35);
+    --surface-1: rgba(244, 239, 232, 0.78);
+    --surface-2: rgba(236, 230, 222, 0.55);
+    --surface-border: rgba(90, 78, 52, 0.14);
+    --surface-hover-border: rgba(90, 78, 52, 0.28);
 
     /* Cards */
-    --card-shadow: 0 4px 24px rgba(41, 37, 36, 0.06);
-    --card-hover-shadow: 0 20px 60px rgba(41, 37, 36, 0.12), 0 4px 16px rgba(201, 168, 76, 0.15);
+    --card-shadow: 0 4px 24px rgba(41, 37, 36, 0.07);
+    --card-hover-shadow: 0 16px 48px rgba(41, 37, 36, 0.1), 0 2px 12px rgba(90, 78, 52, 0.08);
+
+    /* Section bands */
+    --band-bg: rgba(208, 200, 190, 0.42);
 }
 
 /* ============================================
-   TOKENS — Dark theme (override on body.dark-theme)
+   TOKENS — Dark theme (override on html.dark-theme)
    ============================================ */
-body.dark-theme {
+html.dark-theme {
+    --band-bg: rgba(10, 8, 16, 0.55);
     --ink:          #faf7f4;
     --ink-mid:      rgba(250, 247, 244, 0.7);
     --ink-light:    rgba(250, 247, 244, 0.5);
@@ -69,6 +73,13 @@ body.dark-theme {
     --paper-warm:   #100f1a;
     --paper-deep:   #0f0d18;
     --paper-dark:   #09080f;
+
+    /* Vivid gold (unchanged from original palette) */
+    --gold:         #c9a84c;
+    --gold-light:   #e8c96a;
+    --gold-pale:    #f5e6b8;
+    --gold-warm:    #b8860b;
+    --gold-muted:   rgba(201, 168, 76, 0.15);
 
     --surface-1: rgba(10, 8, 22, 0.88);
     --surface-2: rgba(10, 8, 22, 0.6);
@@ -160,6 +171,11 @@ button:focus-visible {
     background-repeat: repeat;
 }
 
+html:not(.dark-theme) .grain-overlay,
+html:not(.dark-theme) .grain {
+    opacity: 0.03;
+}
+
 /* ============================================
    AMBIENT PARTICLES CANVAS
    ============================================ */
@@ -170,6 +186,10 @@ button:focus-visible {
     z-index: 1;
     width: 100%;
     height: 100%;
+}
+
+html:not(.dark-theme) #particles-canvas {
+    opacity: 0.16;
 }
 
 /* ============================================
@@ -228,6 +248,33 @@ button:focus-visible {
     animation-delay: -8s;
 }
 
+/* Light theme — wash blobs read as oversaturated on a bright canvas; mute chroma + strength */
+html:not(.dark-theme) .wash {
+    opacity: 0.28;
+    filter: blur(100px);
+}
+
+html:not(.dark-theme) .wash-pink {
+    background: radial-gradient(circle, rgba(198, 178, 172, 0.5) 0%, transparent 72%);
+    mix-blend-mode: multiply;
+}
+
+html:not(.dark-theme) .wash-purple {
+    background: radial-gradient(circle, rgba(176, 174, 196, 0.45) 0%, transparent 72%);
+    mix-blend-mode: multiply;
+}
+
+html:not(.dark-theme) .wash-blue {
+    background: radial-gradient(circle, rgba(168, 188, 202, 0.42) 0%, transparent 72%);
+    mix-blend-mode: multiply;
+}
+
+html:not(.dark-theme) .wash-gold {
+    mix-blend-mode: multiply;
+    opacity: 0.14;
+    background: radial-gradient(circle, rgba(200, 185, 150, 0.45) 0%, transparent 72%);
+}
+
 /* ============================================
    CORNER CHARACTER SILHOUETTES
    ============================================ */
@@ -253,31 +300,31 @@ button:focus-visible {
     to   { transform: translateY(-14px); }
 }
 
-body.dark-theme .corner-char {
+html.dark-theme .corner-char {
     opacity: 0.14;
     filter: saturate(0.6) brightness(0.85);
 }
 
 /* Dark theme washes (starscape) */
-body.dark-theme .wash-pink {
+html.dark-theme .wash-pink {
     background: radial-gradient(circle, #e090a0 0%, transparent 70%);
     mix-blend-mode: screen;
     opacity: 0.08;
 }
 
-body.dark-theme .wash-purple {
+html.dark-theme .wash-purple {
     background: radial-gradient(circle, #7090c0 0%, transparent 70%);
     mix-blend-mode: screen;
     opacity: 0.06;
 }
 
-body.dark-theme .wash-blue {
+html.dark-theme .wash-blue {
     background: radial-gradient(circle, #6080b0 0%, transparent 70%);
     mix-blend-mode: screen;
     opacity: 0.05;
 }
 
-body.dark-theme .wash-gold {
+html.dark-theme .wash-gold {
     background: radial-gradient(circle, #c9a84c 0%, transparent 70%);
     mix-blend-mode: screen;
     opacity: 0.04;
@@ -365,6 +412,63 @@ body.dark-theme .wash-gold {
     color: var(--gold-warm);
     font-weight: 600;
 }
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.nav-cv {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 12px;
+    border: 1px solid rgba(201, 168, 76, 0.45);
+    border-radius: 2px;
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.nav-cv:hover {
+    background: rgba(201, 168, 76, 0.1);
+    border-color: var(--gold);
+    color: var(--gold-light);
+}
+
+.theme-toggle {
+    width: 36px;
+    height: 34px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--surface-border);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--nav-text);
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.theme-toggle:hover {
+    border-color: rgba(201, 168, 76, 0.45);
+    color: var(--gold);
+    background: rgba(201, 168, 76, 0.06);
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+    font-size: 0.82rem;
+    line-height: 1;
+}
+
+html.dark-theme .theme-toggle .icon-sun { display: none; }
+html:not(.dark-theme) .theme-toggle .icon-moon { display: none; }
 
 .nav-linkedin {
     display: inline-flex;
@@ -475,14 +579,34 @@ body.dark-theme .wash-gold {
 
 .btn-secondary:hover { background: var(--gold); color: var(--paper); }
 
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+}
+
+.page-hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
 /* ============================================
    SHARED FOOTER
    ============================================ */
 .site-footer {
+    background: linear-gradient(180deg, var(--paper-deep) 0%, var(--paper-warm) 100%);
+    color: var(--ink);
+    padding: 64px 60px 48px;
+    border-top: 1px solid var(--surface-border);
+}
+
+html.dark-theme .site-footer {
     background: linear-gradient(180deg, rgba(14, 12, 24, 0.92) 0%, rgba(11, 10, 20, 0.96) 100%);
     color: #faf7f4;
-    padding: 64px 60px 48px;
-    border-top: 1px solid rgba(201, 168, 76, 0.12);
+    border-top-color: rgba(201, 168, 76, 0.12);
 }
 
 .footer-inner {
@@ -508,8 +632,12 @@ body.dark-theme .wash-gold {
     font-size: 0.88rem;
     font-weight: 300;
     font-style: italic;
-    color: rgba(250, 247, 244, 0.3);
+    color: var(--ink-light);
     margin-bottom: 32px;
+}
+
+html.dark-theme .footer-tagline {
+    color: rgba(250, 247, 244, 0.3);
 }
 
 .footer-links {
@@ -525,8 +653,12 @@ body.dark-theme .wash-gold {
     font-weight: 300;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(250, 247, 244, 0.35);
+    color: var(--ink-mid);
     transition: color 0.2s;
+}
+
+html.dark-theme .footer-links a {
+    color: rgba(250, 247, 244, 0.35);
 }
 
 .footer-links a:hover { color: var(--gold-light); }
@@ -544,22 +676,37 @@ body.dark-theme .wash-gold {
     justify-content: center;
     width: 36px;
     height: 36px;
-    border: 1px solid rgba(250, 247, 244, 0.12);
+    border: 1px solid var(--surface-border);
     border-radius: 50%;
-    color: rgba(250, 247, 244, 0.35);
+    color: var(--ink-light);
     font-size: 0.9rem;
     transition: border-color 0.2s, color 0.2s;
 }
 
+html.dark-theme .footer-social a {
+    border-color: rgba(250, 247, 244, 0.12);
+    color: rgba(250, 247, 244, 0.35);
+}
+
 .footer-social a:hover {
+    border-color: var(--surface-hover-border);
+    color: var(--gold-warm);
+}
+
+html.dark-theme .footer-social a:hover {
     border-color: rgba(250, 247, 244, 0.4);
     color: var(--gold-light);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(250, 247, 244, 0.07);
+    border-top: 1px solid rgba(28, 25, 23, 0.08);
     padding-top: 24px;
     font-size: 0.7rem;
+    color: var(--ink-faint);
+}
+
+html.dark-theme .footer-bottom {
+    border-top-color: rgba(250, 247, 244, 0.07);
     color: rgba(250, 247, 244, 0.18);
 }
 
@@ -631,5 +778,14 @@ body.dark-theme .wash-gold {
     .corner-char {
         width: min(160px, 30vw);
         opacity: 0.1;
+    }
+
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .nav-cv {
+        padding: 6px 10px;
+        font-size: 0.62rem;
     }
 }
