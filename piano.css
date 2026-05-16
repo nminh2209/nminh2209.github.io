@@ -134,16 +134,45 @@
     border-bottom:1px solid rgba(201,168,76,0.08);
 }
 
-.sheet-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:0 auto; }
+.section-audio-intro {
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:0.88rem;
+    font-weight:300;
+    color:rgba(250,247,244,0.45);
+    line-height:1.65;
+    text-align:center;
+    max-width:640px;
+    margin:-32px auto 40px;
+}
+.section-audio-intro code {
+    font-family:'JetBrains Mono','Fira Code',Consolas,monospace;
+    font-size:0.78rem;
+    color:rgba(201,168,76,0.75);
+}
+
+.sheet-cards {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(296px,1fr));
+    gap:24px;
+    max-width:1180px;
+    margin:0 auto;
+}
 
 .sheet-card {
     background:rgba(10,8,22,0.9); border:1px solid rgba(201,168,76,0.15); border-radius:8px;
     overflow:hidden; transition:transform 0.4s ease,box-shadow 0.4s ease;
     animation:fadeUp 0.8s ease both;
 }
-.sheet-card:nth-child(1){animation-delay:0.1s}
-.sheet-card:nth-child(2){animation-delay:0.2s}
-.sheet-card:nth-child(3){animation-delay:0.3s}
+.sheet-card:nth-child(1){animation-delay:0.06s}
+.sheet-card:nth-child(2){animation-delay:0.1s}
+.sheet-card:nth-child(3){animation-delay:0.14s}
+.sheet-card:nth-child(4){animation-delay:0.18s}
+.sheet-card:nth-child(5){animation-delay:0.22s}
+.sheet-card:nth-child(6){animation-delay:0.26s}
+.sheet-card:nth-child(7){animation-delay:0.3s}
+.sheet-card:nth-child(8){animation-delay:0.34s}
+.sheet-card:nth-child(9){animation-delay:0.38s}
+.sheet-card:nth-child(10){animation-delay:0.42s}
 .sheet-card:hover { transform:translateY(-6px); box-shadow:0 20px 60px rgba(201,168,76,0.12); }
 
 .sc-image { position:relative; aspect-ratio:4/3; overflow:hidden; background:#1a1520; }
@@ -174,6 +203,25 @@
 .sc-desc { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.88rem; font-weight:300; color:rgba(250,247,244,0.5); line-height:1.7; margin-bottom:16px; }
 .sc-tags { display:flex; gap:8px; flex-wrap:wrap; }
 .sc-tags span { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.68rem; font-weight:400; letter-spacing:0.08em; padding:3px 10px; border:1px solid rgba(201,168,76,0.2); border-radius:100px; color:rgba(250,247,244,0.45); }
+
+.sc-embed {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 4px 0 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #0a0a0c;
+    border: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+.sc-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
 /* ============================================
    PIANO GALLERY
@@ -272,11 +320,13 @@
 @media (max-width:900px) {
     .piano-story-grid { grid-template-columns:1fr; gap:40px; }
     .ps-portrait { max-width:300px; }
-    .sheet-cards { grid-template-columns:1fr; max-width:400px; }
+    .sheet-cards { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:100%; }
+    .section-audio-intro { padding: 0 8px; margin-top: -24px; }
     .piano-gallery-grid { grid-template-columns:repeat(2,1fr); }
     .pg-item.tall { grid-row:span 1; }
 }
 @media (max-width:600px) {
     .piano-hero,.piano-story-section,.sheet-cards-section,.piano-gallery-section,.page-cta { padding-left:24px;padding-right:24px; }
     .piano-hero { padding-top:calc(72px + 40px);padding-bottom:60px; }
+    .sheet-cards { grid-template-columns:1fr; }
 }
