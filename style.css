@@ -356,6 +356,15 @@ html.dark-theme .wash-gold {
     transition: background 0.3s, border-color 0.3s;
 }
 
+/* True viewport center — brand and actions are different widths */
+@media (min-width: 769px) {
+    .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 .site-nav.scrolled {
     background: color-mix(in srgb, var(--nav-bg) 92%, #000 8%);
     border-bottom-color: rgba(201, 168, 76, 0.18);
