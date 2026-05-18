@@ -58,10 +58,10 @@ html:not(.dark-theme) #stars-canvas {
 .crystals-section {
     position: relative; z-index: 3;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
     align-items: stretch;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 40px 72px;
 }
@@ -77,6 +77,7 @@ html:not(.dark-theme) #stars-canvas {
 .crystal-1 { animation-delay: 0.1s; }
 .crystal-2 { animation-delay: 0.25s; }
 .crystal-3 { animation-delay: 0.4s; }
+.crystal-4 { animation-delay: 0.55s; }
 
 .crystal-glow-ring {
     position: absolute;
