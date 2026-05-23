@@ -103,18 +103,19 @@
                 <div class="crystal-content">
                     <div class="parchment-scroll">
                         <div class="parchment-body">
-                        <p class="scroll-category">FULL-STACK · VERCEL DEPLOYMENT</p>
+                        <p class="scroll-category">FULL-STACK &middot; CI/CD &middot; VITEST + PLAYWRIGHT</p>
                         <h2 class="scroll-title">Bakery Management ERP</h2>
                         <div class="scroll-divider"></div>
-                        <p class="scroll-theme">Built for Scale &amp; Impact</p>
+                        <p class="scroll-theme">Solo-built &middot; React 19 &middot; Still in production</p>
                         <p class="scroll-details">
-                            <strong>Stack:</strong> React 19 &middot; TypeScript &middot; Firebase &middot; Ant Design<br>
-                            <strong>Scope:</strong> 12+ modules &middot; 3 stores &middot; Real-time inventory
+                            <strong>Stack:</strong> React 19 &middot; TypeScript &middot; Firebase &middot; Ant Design &middot; Cloudinary<br>
+                            <strong>Scope:</strong> 12+ modules &middot; 3 stores &middot; Vitest + Playwright &middot; GitHub Actions CI
                         </p>
-                        <p class="scroll-desc">A production bakery ERP serving 3 physical stores. Automated product code generation, multi-ingredient purchase orders with pricing analytics, real-time inventory tracking, and a fully localized responsive UI.</p>
+                        <p class="scroll-desc">Solo-built Vietnamese bakery admin app still running in production for 3 stores. Lazy-loaded routes, code-split dashboard charts, live Firestore listeners, and Cloudinary uploads. Locked Firestore rules to a single admin UID, <code>requireEnv()</code> for secrets, and restricted API keys &mdash; with Vitest unit tests and Playwright E2E under GitHub Actions (lint, test, build, deploy to Vercel on every push to <code>main</code>).</p>
                         <ul class="impact-list">
-                            <li>Reduced stock mistakes by centralizing inventory updates in real time.</li>
-                            <li>Improved daily operations across 3 stores with role-based dashboards.</li>
+                            <li>Added full CI/CD pipeline with GitHub Actions &mdash; lint, unit tests, E2E, and auto-deploy to Vercel on every push to main.</li>
+                            <li>Wrote Vitest unit tests and Playwright E2E specs covering auth, navigation, and core business logic.</li>
+                            <li>Reduced stock mistakes by centralizing inventory and supply-chain updates with real-time Firestore listeners.</li>
                         </ul>
                         </div>
                         <div class="parchment-footer">
