@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="theme-init.js"></script>
     <title>About | Nguyen Hoang Minh — Software Engineer & Pianist</title>
-    <meta name="description" content="Nguyen Hoang Minh — Software Engineering student at Swinburne University. Full-stack developer, pianist.">
+    <meta name="description" content="Nguyen Hoang Minh — software engineer and pianist in Hanoi. Story, experience, education, and what drives the work.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -116,9 +116,9 @@
                     </div>
                 </div>
                 <div class="story-text">
-                    <p>I'm <strong>Nguyen Hoang Minh</strong> &mdash; a Software Engineering student at <strong>Swinburne University of Technology</strong> (graduating 2026) with a passion for building real-world, production-ready software. My journey is built on two pillars: code that works at scale, and music that moves people.</p>
-                    <p>Over the past year I've worked across the full stack: from backend APIs with <strong>FastAPI and Django</strong>, to polished React frontends with <strong>TypeScript and Vite</strong>, to real-time systems on <strong>Firebase</strong>. I've maintained a live production CRM platform handling <strong>10,000+ daily events</strong>, instrumented <strong>Azure Application Insights</strong> across three vendors, and fixed critical async patterns with exponential backoff retry achieving <strong>99.9% success rates</strong>.</p>
-                    <p>Beyond software, I'm a classically trained pianist &mdash; self-taught over many years &mdash; and a lifelong Final Fantasy fan. Music taught me something that code reinforced: that mastery is not about knowing everything, but about caring enough to get the details right. The same discipline that makes a Chopin étude clean makes a production deployment reliable.</p>
+                    <p>I'm <strong>Nguyen Hoang Minh</strong> &mdash; a Software Engineering student at <strong>Swinburne University of Technology</strong> (graduating 2026), building production software from Hanoi. I care about systems that stay up, code that other people can maintain, and the small details that separate a demo from something a team can rely on.</p>
+                    <p>Professionally, I've moved between solo builds and structured teams: a live bakery ERP still in production, a capstone where I owned backend architecture, production CRM work at MindX, and Agile delivery at BlueOC. The through-line is full-stack work with real constraints &mdash; security, CI, async failures, and honest deployment trade-offs. <a href="portfolio.html">Portfolio</a> has the case studies, commits, and repos.</p>
+                    <p>Beyond software, I'm a self-taught pianist and a lifelong Final Fantasy fan. Music taught me something that code reinforced: mastery is not about knowing everything, but about caring enough to get the details right. The same discipline that makes a Chopin &eacute;tude clean makes a production deployment reliable.</p>
                     <p>I'm <strong>open to opportunities</strong> in full-stack development, DevOps, and AI-driven projects. If you're building something that matters, I'd love to talk.</p>
                 </div>
             </div>
@@ -149,9 +149,9 @@
                             <h3 class="tc-title">Full Stack Engineer</h3>
                             <span class="tc-company">BlueOC</span>
                         </div>
-                        <p class="tc-desc">Building and maintaining full-stack web applications. Working across the entire stack — from system architecture and backend logic to polished React frontends and deployment pipelines. Actively contributing to production systems and client-facing features.</p>
+                        <p class="tc-desc">Deliver production features for internal workforce systems (Timesheet, TopHat LM) within an Agile team &mdash; PR reviews, Docker workflows, SQL migrations, and cross-functional delivery. Designed overtime planning, shift management, and granular RBAC; built FastAPI backend scaffolding and tested endpoints for an OTA platform.</p>
                         <div class="tc-tags">
-                            <span>React</span><span>FastAPI</span><span>TypeScript</span><span>PostgreSQL</span><span>Git</span><span>CI/CD</span>
+                            <span>React</span><span>FastAPI</span><span>Docker</span><span>Agile</span><span>RBAC</span><span>CI/CD</span>
                         </div>
                     </div>
                 </div>
@@ -202,67 +202,36 @@
             </svg>
         </div>
 
-        <!-- Projects -->
-        <section class="projects-highlight-section">
+        <!-- Work teasers — details on Portfolio -->
+        <section class="work-teaser-section">
             <span class="section-eyebrow">Work</span>
-            <h2 class="section-heading">Key Projects</h2>
-            <div class="projects-highlight-grid">
+            <h2 class="section-heading">What I Build</h2>
+            <p class="work-teaser-intro">Short pointers only &mdash; full case studies, stack breakdown, GitHub activity, and certs are on <a href="portfolio.html">Portfolio</a>.</p>
+            <div class="work-teaser-grid">
 
-                <div class="ph-card">
-                    <div class="ph-card-header">
-                        <span class="ph-cat">Full-Stack &middot; Production</span>
-                        <h3 class="ph-title">Bakery Management System</h3>
-                    </div>
-                    <p class="ph-period">Jun 2025 &ndash; Present &middot; Live Production</p>
-                    <p class="ph-desc">A full-stack bakery ERP platform serving 3 physical stores, with 12+ modules including automated product code generation, multi-ingredient purchase orders with pricing analytics, real-time inventory tracking, and a fully localized responsive UI.</p>
-                    <div class="ph-tags">
-                        <span>React 19</span><span>TypeScript</span><span>Firebase</span><span>Ant Design</span><span>Real-time</span>
-                    </div>
-                    <div class="ph-outcomes">
-                        <div class="ph-outcome">
-                            <span class="ph-outcome-num">3</span>
-                            <span class="ph-outcome-label">Stores in production</span>
-                        </div>
-                        <div class="ph-outcome">
-                            <span class="ph-outcome-num">12+</span>
-                            <span class="ph-outcome-label">Modules deployed</span>
-                        </div>
-                    </div>
-                </div>
+                <a href="portfolio.html" class="work-teaser">
+                    <span class="work-teaser-cat">Solo &middot; Production</span>
+                    <h3 class="work-teaser-title">Bakery Management ERP</h3>
+                    <p class="work-teaser-line">React 19 &middot; Firebase &middot; Vitest + Playwright CI/CD</p>
+                </a>
 
-                <div class="ph-card">
-                    <div class="ph-card-header">
-                        <span class="ph-cat">Backend Lead &middot; Capstone</span>
-                        <h3 class="ph-title">HMU Medical Student Documentation Platform</h3>
-                    </div>
-                    <p class="ph-period">2025 &middot; Django &middot; PostgreSQL &middot; Vue3</p>
-                    <p class="ph-desc">Built and extended a clinical-case documentation system as backend lead. Designed detailed medical models, fixed CORS and serializer issues, and integrated the Vue3 frontend for full case display and management.</p>
-                    <div class="ph-tags">
-                        <span>Django</span><span>PostgreSQL</span><span>Vue3</span><span>REST API</span><span>CORS</span>
-                    </div>
-                </div>
+                <a href="portfolio.html" class="work-teaser">
+                    <span class="work-teaser-cat">Capstone &middot; Backend lead</span>
+                    <h3 class="work-teaser-title">HMU Clinical Case Platform</h3>
+                    <p class="work-teaser-line">Django &middot; Vue3 &middot; 7 apps &middot; 38% of commits</p>
+                </a>
 
-                <div class="ph-card">
-                    <div class="ph-card-header">
-                        <span class="ph-cat">Production &middot; CRM</span>
-                        <h3 class="ph-title">MindX CRM Platform</h3>
-                    </div>
-                    <p class="ph-period">Nov 2025 &ndash; Jan 2026 &middot; MindX Technology School</p>
-                    <p class="ph-desc">Maintained live CRM with real-time call integration via Stringee VoIP API. Instrumented Azure Application Insights across 3 vendors, reduced debugging time by 60%, fixed async lead sync with exponential backoff achieving 99.9% success rate.</p>
-                    <div class="ph-tags">
-                        <span>Python</span><span>Azure</span><span>Stringee API</span><span>Application Insights</span><span>Async Patterns</span>
-                    </div>
-                    <div class="ph-outcomes">
-                        <div class="ph-outcome">
-                            <span class="ph-outcome-num">10K+</span>
-                            <span class="ph-outcome-label">Daily events tracked</span>
-                        </div>
-                        <div class="ph-outcome">
-                            <span class="ph-outcome-num">99.9%</span>
-                            <span class="ph-outcome-label">Async success rate</span>
-                        </div>
-                    </div>
-                </div>
+                <a href="portfolio.html" class="work-teaser">
+                    <span class="work-teaser-cat">Production CRM</span>
+                    <h3 class="work-teaser-title">MindX CRM Platform</h3>
+                    <p class="work-teaser-line">Azure telemetry &middot; VoIP &middot; 99.9% async reliability</p>
+                </a>
+
+                <a href="portfolio.html" class="work-teaser">
+                    <span class="work-teaser-cat">Agile team &middot; Private</span>
+                    <h3 class="work-teaser-title">BlueOC Workforce Platform</h3>
+                    <p class="work-teaser-line">React &middot; FastAPI &middot; Docker &middot; RBAC</p>
+                </a>
 
             </div>
         </section>
@@ -276,88 +245,7 @@
             </svg>
         </div>
 
-        <!-- Skills -->
-        <section class="skills-section">
-            <span class="section-eyebrow">Craft</span>
-            <h2 class="section-heading">Skills &amp; Technologies</h2>
-            <div class="skills-grid">
-
-                <div class="skill-group">
-                    <h3 class="sg-title">Frontend</h3>
-                    <div class="sg-chips">
-                        <span class="chip">React</span>
-                        <span class="chip">TypeScript</span>
-                        <span class="chip">Vite</span>
-                        <span class="chip">Ant Design</span>
-                        <span class="chip">Vue 3</span>
-                        <span class="chip">HTML/CSS</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="sg-title">Backend</h3>
-                    <div class="sg-chips">
-                        <span class="chip">Python</span>
-                        <span class="chip">FastAPI</span>
-                        <span class="chip">Django</span>
-                        <span class="chip">Flask</span>
-                        <span class="chip">REST API</span>
-                        <span class="chip">Kotlin</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="sg-title">Data &amp; Cloud</h3>
-                    <div class="sg-chips">
-                        <span class="chip">Firebase</span>
-                        <span class="chip">PostgreSQL</span>
-                        <span class="chip">SQLite</span>
-                        <span class="chip">Azure</span>
-                        <span class="chip">AWS</span>
-                        <span class="chip">Application Insights</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="sg-title">Tools &amp; Practices</h3>
-                    <div class="sg-chips">
-                        <span class="chip">Git</span>
-                        <span class="chip">Debugging</span>
-                        <span class="chip">API Design</span>
-                        <span class="chip">Database Modeling</span>
-                        <span class="chip">Performance Optimization</span>
-                        <span class="chip">Requirement Analysis</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="sg-title">Certifications</h3>
-                    <div class="sg-chips">
-                        <span class="chip cert">Harvard CS50x 2025</span>
-                        <span class="chip cert">AWS Cloud Foundations</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h3 class="sg-title">Languages</h3>
-                    <div class="sg-chips">
-                        <span class="chip">Vietnamese &mdash; Native</span>
-                        <span class="chip">English &mdash; Professional</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Ornament -->
-        <div class="ornament" aria-hidden="true">
-            <svg viewBox="0 0 400 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <line x1="0" y1="10" x2="170" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
-                <rect x="188" y="5" width="10" height="10" transform="rotate(45 193 10)" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
-                <line x1="210" y1="10" x2="400" y2="10" stroke="#c9a84c" stroke-width="0.5" opacity="0.35"/>
-            </svg>
-        </div>
-
+        <!-- Education -->
         <!-- Education -->
         <section class="education-section">
             <span class="section-eyebrow">Learning</span>
@@ -432,11 +320,11 @@
 
         <!-- CTA -->
         <section class="page-cta">
-            <h2>Open to Opportunities</h2>
-            <p>Full-stack development, DevOps, AI-driven projects. I'm always interested in work that challenges me to grow.</p>
+            <h2>Who I Am</h2>
+            <p>Story and background here; engineering depth and repos on <a href="portfolio.html">Portfolio</a>.</p>
             <div class="cta-buttons">
                 <a href="contact.html" class="btn-primary">Get in Touch</a>
-                <a href="portfolio.html" class="btn-secondary">View My Work</a>
+                <a href="portfolio.html" class="btn-secondary">View Portfolio</a>
             </div>
         </section>
 
