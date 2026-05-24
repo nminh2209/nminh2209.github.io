@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="theme-init.js"></script>
     <title>Portfolio | Nguyen Hoang Minh — Software Engineer</title>
-    <meta name="description" content="Software projects by Nguyen Hoang Minh — full-stack web apps, production CRM systems, and real-world engineering.">
+    <meta name="description" content="Software projects and engineering work by Nguyen Hoang Minh — full-stack apps, Vingroup AI Thực Chiến fellowship, production CRM, and capstone systems.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -81,13 +81,61 @@
         <!-- Memory Crystals — Featured project showcases -->
         <section class="crystals-section">
 
-            <!-- Crystal 1: Bakery ERP -->
-            <div class="memory-crystal crystal-1" data-index="0">
+            <!-- Crystal 0: AI Thực Chiến / VinAI Fellowship -->
+            <div class="memory-crystal crystal-vinai" data-index="0">
                 <div class="crystal-glow-ring" aria-hidden="true"></div>
                 <div class="crystal-frame">
                     <div class="crystal-inner">
-                        <div class="crystal-image-area">
-                            <img src="images/ac1.jpg" alt="Bakery ERP" class="crystal-portrait" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                        <div class="crystal-image-area crystal-image-area--brand">
+                            <img src="images/logo-vinuni-vingroup.png" alt="VinUniversity and Vingroup — AI Thực Chiến fellowship" class="crystal-portrait crystal-portrait--brand" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                            <div class="crystal-prism" aria-hidden="true">
+                                <div class="prism-beam beam-1"></div>
+                                <div class="prism-beam beam-2"></div>
+                                <div class="prism-beam beam-3"></div>
+                            </div>
+                        </div>
+                        <div class="crystal-corner tl"></div>
+                        <div class="crystal-corner tr"></div>
+                        <div class="crystal-corner bl"></div>
+                        <div class="crystal-corner br"></div>
+                    </div>
+                </div>
+                <div class="crystal-content">
+                    <div class="parchment-scroll">
+                        <div class="parchment-body">
+                        <p class="scroll-category">FELLOWSHIP &middot; APPLIED AI &middot; VINGROUP</p>
+                        <h2 class="scroll-title">AI Thực Chiến &mdash; AI Engineering Fellow</h2>
+                        <div class="scroll-divider"></div>
+                        <p class="scroll-theme">May 2026 &ndash; Aug 2026 &middot; VinUniversity / Vingroup</p>
+                        <p class="scroll-details">
+                            <strong>Program:</strong> 12-week full-time &middot; Fully funded &middot; Monthly stipend<br>
+                            <strong>Focus:</strong> Applied AI &middot; Machine Learning &middot; Python &middot; Production embed
+                        </p>
+                        <p class="scroll-desc">Competitively selected for Vingroup&apos;s inaugural AI Thực Chiến fellowship &mdash; a full-time 12-week program training high-potential engineers in applied AI. Curriculum covers AI foundations, a specialization track, and 6 weeks embedded at a Vingroup technology company (VinSmartFuture, VinRobotics, or VinSOC) working on real production AI projects under Vingroup engineers and researchers.</p>
+                        <ul class="impact-list">
+                            <li>Selected from a competitive applicant pool for Vingroup&apos;s first cohort &mdash; fully funded with monthly stipend.</li>
+                            <li>6-week company embed on production AI systems at VinSmartFuture, VinRobotics, or VinSOC (placement TBD at program start).</li>
+                            <li>Structured track from AI foundations through specialization to shipped work alongside Vingroup engineers and researchers.</li>
+                        </ul>
+                        </div>
+                        <div class="parchment-footer">
+                        <div class="project-links">
+                            <a href="https://vinuni.edu.vn/" target="_blank" rel="noopener" class="btn-secondary btn-small">VinUniversity</a>
+                            <a href="https://www.linkedin.com/in/nguyen-minh-759149223/" target="_blank" rel="noopener" class="btn-secondary btn-small">LinkedIn</a>
+                        </div>
+                        <p class="project-note"><strong>Note:</strong> Fellowship begins May 2026. Placement company and project scope are assigned during the program &mdash; this card will be updated with outcomes after the embed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crystal 1: Bakery ERP -->
+            <div class="memory-crystal crystal-1" data-index="1">
+                <div class="crystal-glow-ring" aria-hidden="true"></div>
+                <div class="crystal-frame">
+                    <div class="crystal-inner">
+                        <div class="crystal-image-area crystal-image-area--screenshot">
+                            <img src="images/project-bakery-erp.png" alt="Home Bakery ERP admin dashboard screenshot" class="crystal-portrait crystal-portrait--screenshot" loading="lazy" decoding="async" onerror="this.style.display='none'">
                             <div class="crystal-prism" aria-hidden="true">
                                 <div class="prism-beam beam-1"></div>
                                 <div class="prism-beam beam-2"></div>
@@ -115,7 +163,7 @@
                         <ul class="impact-list">
                             <li>Added full CI/CD pipeline with GitHub Actions &mdash; lint, unit tests, E2E, and auto-deploy to Vercel on every push to main.</li>
                             <li>Wrote Vitest unit tests and Playwright E2E specs covering auth, navigation, and core business logic.</li>
-                            <li>Reduced stock mistakes by centralizing inventory and supply-chain updates with real-time Firestore listeners.</li>
+                            <li>Replaced manual order tracking across 3 stores with real-time Firestore listeners and centralized inventory.</li>
                         </ul>
                         </div>
                         <div class="parchment-footer">
@@ -130,12 +178,12 @@
             </div>
 
             <!-- Crystal 2: MindX CRM -->
-            <div class="memory-crystal crystal-2" data-index="1">
+            <div class="memory-crystal crystal-2" data-index="2">
                 <div class="crystal-glow-ring" aria-hidden="true"></div>
                 <div class="crystal-frame">
                     <div class="crystal-inner">
-                        <div class="crystal-image-area">
-                            <img src="images/ac2.jpg" alt="MindX CRM" class="crystal-portrait" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                        <div class="crystal-image-area crystal-image-area--brand">
+                            <img src="images/logo-mindx.png" alt="MindX logo" class="crystal-portrait crystal-portrait--brand" loading="lazy" decoding="async" onerror="this.style.display='none'">
                             <div class="crystal-prism" aria-hidden="true">
                                 <div class="prism-beam beam-1"></div>
                                 <div class="prism-beam beam-2"></div>
@@ -176,12 +224,12 @@
             </div>
 
             <!-- Crystal 3: HMU Medical -->
-            <div class="memory-crystal crystal-3" data-index="2">
+            <div class="memory-crystal crystal-3" data-index="3">
                 <div class="crystal-glow-ring" aria-hidden="true"></div>
                 <div class="crystal-frame">
                     <div class="crystal-inner">
-                        <div class="crystal-image-area">
-                            <img src="images/ac3.jpg" alt="HMU Clinical Case Platform" class="crystal-portrait" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                        <div class="crystal-image-area crystal-image-area--brand">
+                            <img src="images/logo-hmu.png" alt="Hanoi Medical University logo" class="crystal-portrait crystal-portrait--brand" loading="lazy" decoding="async" onerror="this.style.display='none'">
                             <div class="crystal-prism" aria-hidden="true">
                                 <div class="prism-beam beam-1"></div>
                                 <div class="prism-beam beam-2"></div>
@@ -223,12 +271,12 @@
             </div>
 
             <!-- Crystal 4: BlueOC -->
-            <div class="memory-crystal crystal-4" data-index="3">
+            <div class="memory-crystal crystal-4" data-index="4">
                 <div class="crystal-glow-ring" aria-hidden="true"></div>
                 <div class="crystal-frame">
                     <div class="crystal-inner">
-                        <div class="crystal-image-area">
-                            <img src="images/ac4.jpg" alt="BlueOC Workforce Management" class="crystal-portrait" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                        <div class="crystal-image-area crystal-image-area--brand">
+                            <img src="images/logo-blueoc.png" alt="BlueOC logo" class="crystal-portrait crystal-portrait--brand" loading="lazy" decoding="async" onerror="this.style.display='none'">
                             <div class="crystal-prism" aria-hidden="true">
                                 <div class="prism-beam beam-1"></div>
                                 <div class="prism-beam beam-2"></div>

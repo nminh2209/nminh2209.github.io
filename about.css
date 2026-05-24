@@ -146,6 +146,13 @@ html.dark-theme .piano-key.black { background: #1c1917; }
 .work-teaser-cat { display:block; font-family:'Cormorant Garamond',Georgia,serif; font-size:0.62rem; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
 .work-teaser-title { font-family:'Playfair Display',Georgia,serif; font-size:1.15rem; font-weight:400; font-style:italic; color:var(--ink); margin-bottom:8px; line-height:1.25; }
 .work-teaser-line { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.88rem; font-weight:300; color:var(--ink-light); line-height:1.5; margin:0; }
+.work-teaser-expanded { grid-column:1 / -1; cursor:default; }
+.work-teaser-expanded:hover { transform:none; }
+.work-teaser-desc { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.92rem; font-weight:300; color:var(--ink-light); line-height:1.7; margin:0 0 14px; }
+.work-teaser-tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.work-teaser-tags span { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.72rem; font-weight:300; color:var(--ink-light); padding:4px 10px; background:var(--surface-2); border:1px solid var(--surface-border); border-radius:100px; }
+.work-teaser-link { display:inline-block; margin-top:14px; font-family:'Cormorant Garamond',Georgia,serif; font-size:0.85rem; font-weight:400; letter-spacing:0.06em; color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.35); }
+.work-teaser-link:hover { border-color:var(--gold); }
 
 .story-text a { color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.35); }
 .story-text a:hover { border-color:var(--gold); }

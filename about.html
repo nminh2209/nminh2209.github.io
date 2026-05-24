@@ -117,7 +117,7 @@
                 </div>
                 <div class="story-text">
                     <p>I'm <strong>Nguyen Hoang Minh</strong> &mdash; a Software Engineering student at <strong>Swinburne University of Technology</strong> (graduating 2026), building production software from Hanoi. I care about systems that stay up, code that other people can maintain, and the small details that separate a demo from something a team can rely on.</p>
-                    <p>Professionally, I've moved between solo builds and structured teams: a live bakery ERP still in production, a capstone where I owned backend architecture, production CRM work at MindX, and Agile delivery at BlueOC. The through-line is full-stack work with real constraints &mdash; security, CI, async failures, and honest deployment trade-offs. <a href="portfolio.html">Portfolio</a> has the case studies, commits, and repos.</p>
+                    <p>Professionally, I've moved between solo builds and structured teams: a live bakery ERP still in production, a capstone where I owned backend architecture, production CRM work at MindX, Agile delivery at BlueOC, and from May 2026 an AI Engineering fellowship with Vingroup&apos;s AI Thực Chiến program at VinUniversity. The through-line is full-stack work with real constraints &mdash; security, CI, async failures, and honest deployment trade-offs. <a href="portfolio.html">Portfolio</a> has the case studies, commits, and repos.</p>
                     <p>Beyond software, I'm a self-taught pianist and a lifelong Final Fantasy fan. Music taught me something that code reinforced: mastery is not about knowing everything, but about caring enough to get the details right. The same discipline that makes a Chopin &eacute;tude clean makes a production deployment reliable.</p>
                     <p>I'm <strong>open to opportunities</strong> in full-stack development, DevOps, and AI-driven projects. If you're building something that matters, I'd love to talk.</p>
                 </div>
@@ -141,6 +141,23 @@
 
                 <div class="timeline-item">
                     <div class="timeline-date">
+                        <span class="td-year">May 2026</span>
+                        <span class="td-year">Aug 2026</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="tc-header">
+                            <h3 class="tc-title">AI Engineering Fellow</h3>
+                            <span class="tc-company">AI Thực Chiến &middot; VinUniversity / Vingroup</span>
+                        </div>
+                        <p class="tc-desc">Competitively selected for Vingroup&apos;s inaugural AI Thực Chiến fellowship &mdash; a full-time 12-week program training high-potential engineers in applied AI. Fully funded with monthly stipend. Curriculum covers AI foundations, a specialization track, and 6 weeks embedded at a Vingroup technology company (VinSmartFuture, VinRobotics, or VinSOC) working on real production AI projects under Vingroup engineers and researchers.</p>
+                        <div class="tc-tags">
+                            <span>Applied AI</span><span>Machine Learning</span><span>Python</span><span>VinUni</span><span>Vingroup</span><span>Full-time Fellowship</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
                         <span class="td-year">Apr 2026</span>
                         <span class="td-now">Present</span>
                     </div>
@@ -149,9 +166,9 @@
                             <h3 class="tc-title">Full Stack Engineer</h3>
                             <span class="tc-company">BlueOC</span>
                         </div>
-                        <p class="tc-desc">Deliver production features for internal workforce systems (Timesheet, TopHat LM) within an Agile team &mdash; PR reviews, Docker workflows, SQL migrations, and cross-functional delivery. Designed overtime planning, shift management, and granular RBAC; built FastAPI backend scaffolding and tested endpoints for an OTA platform.</p>
+                        <p class="tc-desc">Delivered production features for two internal workforce systems &mdash; Timesheet and TopHat LM &mdash; used daily by internal teams. Designed overtime planning, shift management, and granular RBAC from scratch. Built FastAPI backend scaffolding, database models, and unit tests for an OTA platform. Operated fully within an Agile workflow &mdash; PR reviews, Docker containerization, SQL migrations, cross-functional collaboration.</p>
                         <div class="tc-tags">
-                            <span>React</span><span>FastAPI</span><span>Docker</span><span>Agile</span><span>RBAC</span><span>CI/CD</span>
+                            <span>React</span><span>TypeScript</span><span>FastAPI</span><span>Docker</span><span>SQL Migrations</span><span>RBAC</span><span>Agile</span>
                         </div>
                     </div>
                 </div>
@@ -210,16 +227,36 @@
             <div class="work-teaser-grid">
 
                 <a href="portfolio.html" class="work-teaser">
+                    <span class="work-teaser-cat">Fellowship &middot; May 2026</span>
+                    <h3 class="work-teaser-title">AI Thực Chiến &mdash; VinUniversity</h3>
+                    <p class="work-teaser-line">Applied AI &middot; 12-week embed &middot; Vingroup</p>
+                </a>
+
+                <a href="portfolio.html" class="work-teaser">
                     <span class="work-teaser-cat">Solo &middot; Production</span>
                     <h3 class="work-teaser-title">Bakery Management ERP</h3>
                     <p class="work-teaser-line">React 19 &middot; Firebase &middot; Vitest + Playwright CI/CD</p>
                 </a>
 
-                <a href="portfolio.html" class="work-teaser">
+                <div class="work-teaser work-teaser-expanded">
                     <span class="work-teaser-cat">Capstone &middot; Backend lead</span>
                     <h3 class="work-teaser-title">HMU Clinical Case Platform</h3>
-                    <p class="work-teaser-line">Django &middot; Vue3 &middot; 7 apps &middot; 38% of commits</p>
-                </a>
+                    <p class="work-teaser-desc">Led backend architecture solo for Hanoi Medical University&apos;s clinical case platform across a 7-month build. Designed all models, serializers, migrations, and API contracts across 7 Django apps. Built multi-step case creation wizard, PDF/Word export, real-time WebSocket notifications, VietOCR integration with fallback, and a grade claim system &mdash; while managing frontend-backend alignment and full Docker infrastructure. Owned 38% of all commits (179/~480) as primary backend architect.</p>
+                    <div class="work-teaser-tags">
+                        <span>Django</span><span>PostgreSQL</span><span>Vue3</span><span>Docker</span><span>Pytest/Vitest</span><span>WebSocket</span><span>OCR</span>
+                    </div>
+                    <div class="ph-outcomes">
+                        <div class="ph-outcome">
+                            <span class="ph-outcome-num">179</span>
+                            <span class="ph-outcome-label">Commits &mdash; 38% of total</span>
+                        </div>
+                        <div class="ph-outcome">
+                            <span class="ph-outcome-num">7</span>
+                            <span class="ph-outcome-label">Django apps architected</span>
+                        </div>
+                    </div>
+                    <a href="portfolio.html" class="work-teaser-link">Full case study on Portfolio &rarr;</a>
+                </div>
 
                 <a href="portfolio.html" class="work-teaser">
                     <span class="work-teaser-cat">Production CRM</span>
@@ -245,7 +282,6 @@
             </svg>
         </div>
 
-        <!-- Education -->
         <!-- Education -->
         <section class="education-section">
             <span class="section-eyebrow">Learning</span>

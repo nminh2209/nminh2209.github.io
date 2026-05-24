@@ -58,12 +58,15 @@ html:not(.dark-theme) #stars-canvas {
 .crystals-section {
     position: relative; z-index: 3;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    /* 1 col on phones → 2 on tablets → 3 on wide screens (5 cards = 3 + 2) */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap: clamp(20px, 2.5vw, 32px);
     align-items: stretch;
-    max-width: 1100px;
+    width: 100%;
+    max-width: min(1440px, calc(100vw - 32px));
     margin: 0 auto;
-    padding: 0 40px 72px;
+    padding: 0 clamp(20px, 4vw, 48px) 72px;
+    box-sizing: border-box;
 }
 
 .memory-crystal {
@@ -72,12 +75,14 @@ html:not(.dark-theme) #stars-canvas {
     flex-direction: column;
     align-items: stretch;
     height: 100%;
+    min-width: 0;
     animation: fadeUp 0.9s ease both;
 }
-.crystal-1 { animation-delay: 0.1s; }
-.crystal-2 { animation-delay: 0.25s; }
-.crystal-3 { animation-delay: 0.4s; }
-.crystal-4 { animation-delay: 0.55s; }
+.crystal-vinai { animation-delay:0.05s; }
+.crystal-1 { animation-delay:0.15s; }
+.crystal-2 { animation-delay:0.3s; }
+.crystal-3 { animation-delay:0.45s; }
+.crystal-4 { animation-delay:0.6s; }
 
 .crystal-glow-ring {
     position: absolute;
@@ -117,25 +122,54 @@ html:not(.dark-theme) #stars-canvas {
     overflow: hidden;
 }
 
+/* Same frame size for every crystal (logos + screenshots) */
 .crystal-image-area {
     position: relative;
     width: 100%;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
+    background: #12100e;
+    flex-shrink: 0;
 }
 
-.crystal-portrait {
+.crystal-image-area .crystal-portrait {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    max-width: none;
+    max-height: none;
+    margin: 0;
     display: block;
-    filter: saturate(0.95) brightness(0.85);
+    object-fit: cover;
+    object-position: center center;
     transition: transform 0.6s ease, filter 0.4s;
 }
+
+/* Logos: light backing so white PNGs don’t float on black */
+.crystal-image-area--brand {
+    background: #ebe8e3;
+}
+.crystal-image-area--brand .crystal-portrait {
+    object-fit: cover;
+    object-position: center center;
+    filter: none;
+}
+
+/* App screenshots: anchor to top of UI */
+.crystal-image-area--screenshot {
+    background: #1a1814;
+}
+.crystal-image-area--screenshot .crystal-portrait {
+    object-position: center top;
+    filter: saturate(0.95) brightness(0.92);
+}
+
 .memory-crystal:hover .crystal-portrait {
-    transform: scale(1.04);
-    filter: saturate(1.1) brightness(0.95);
+    transform: scale(1.03);
+}
+.memory-crystal:hover .crystal-image-area--screenshot .crystal-portrait {
+    filter: saturate(1.05) brightness(0.98);
 }
 
 /* Prism beams */
@@ -443,8 +477,13 @@ html.dark-theme .cert-logo-img {
 /* ============================================
    RESPONSIVE
    ============================================ */
+@media (min-width: 1200px) {
+    .crystals-section {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 900px) {
-    .crystals-section { grid-template-columns:1fr; max-width:420px; }
     .stack-grid { grid-template-columns:1fr; }
     .certs-grid { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:900px; }
     .projects-grid { grid-template-columns:repeat(2,1fr); }
@@ -455,7 +494,11 @@ html.dark-theme .cert-logo-img {
 @media (max-width: 600px) {
     .page-hero,.crystals-section,.github-section,.projects-section,.stack-section,.certs-section,.page-cta { padding-left:24px;padding-right:24px; }
     .page-hero { padding-top:calc(72px + 40px);padding-bottom:32px; }
-    .crystals-section { padding-bottom:56px; }
+    .crystals-section {
+        padding-bottom:56px;
+        max-width:100%;
+        grid-template-columns:1fr;
+    }
     .stack-grid { gap:24px; }
     .certs-grid { grid-template-columns:1fr; }
     .projects-grid { grid-template-columns:1fr; }
