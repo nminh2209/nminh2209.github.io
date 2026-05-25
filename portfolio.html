@@ -159,7 +159,7 @@
                             <strong>Stack:</strong> React 19 &middot; TypeScript &middot; Firebase &middot; Ant Design &middot; Cloudinary<br>
                             <strong>Scope:</strong> 12+ modules &middot; 3 stores &middot; Vitest + Playwright &middot; GitHub Actions CI
                         </p>
-                        <p class="scroll-desc">Solo-built Vietnamese bakery admin app still running in production for 3 stores. Lazy-loaded routes, code-split dashboard charts, live Firestore listeners, and Cloudinary uploads. Locked Firestore rules to a single admin UID, <code>requireEnv()</code> for secrets, and restricted API keys &mdash; with Vitest unit tests and Playwright E2E under GitHub Actions (lint, test, build, deploy to Vercel on every push to <code>main</code>).</p>
+                        <p class="scroll-desc">Solo-built Vietnamese bakery admin app still running in production for 3 stores. Lazy-loaded routes, code-split dashboard charts, live Firestore listeners, and Cloudinary uploads. Locked Firestore rules to a single admin UID, centralized requireEnv checks for secrets, and restricted API keys &mdash; with Vitest unit tests and Playwright E2E under GitHub Actions for lint, test, build, and Vercel deploys on every push to main.</p>
                         <ul class="impact-list">
                             <li>Added full CI/CD pipeline with GitHub Actions &mdash; lint, unit tests, E2E, and auto-deploy to Vercel on every push to main.</li>
                             <li>Wrote Vitest unit tests and Playwright E2E specs covering auth, navigation, and core business logic.</li>
