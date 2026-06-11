@@ -360,6 +360,10 @@ html.dark-theme .cert-logo-img {
 .cg-link { font-family:'Cormorant Garamond',Georgia,serif; font-size:0.78rem; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:rgba(201,168,76,0.45); transition:color 0.2s; }
 .cg-link:hover { color:#c9a84c; }
 .contrib-graph { width:100%; height:auto; display:block; }
+.gh-widgets { display:flex; flex-wrap:wrap; gap:16px; align-items:flex-start; justify-content:center; }
+.gh-widget-link { display:block; line-height:0; }
+.gh-widget-img { max-width:100%; height:auto; border-radius:10px; }
+.gh-widget-streak { flex:1 1 280px; max-width:100%; }
 
 /* Commit Track */
 .commit-track { max-width:1000px; margin:0 auto 48px; }
